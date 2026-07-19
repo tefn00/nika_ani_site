@@ -9,8 +9,15 @@ const selectedDateOutput = document.querySelector('[data-selected-date]');
 const bookingDateInput = document.querySelector('[data-booking-date]');
 const calendarPrev = document.querySelector('[data-calendar-prev]');
 const calendarNext = document.querySelector('[data-calendar-next]');
+const authPanel = document.querySelector('[data-auth-panel]');
+const authStatus = document.querySelector('[data-auth-status]');
+const googleButton = document.querySelector('[data-google-button]');
+const googleNameInput = document.querySelector('[data-google-name]');
+const googleEmailInput = document.querySelector('[data-google-email]');
+const GOOGLE_CLIENT_ID = 'YOUR_GOOGLE_CLIENT_ID.apps.googleusercontent.com';
 let visibleCalendarDate = new Date();
 let selectedBookingDate = '';
+let authorizedGoogleUser = null;
 
 const translations = {
   en: {
@@ -168,6 +175,18 @@ Object.assign(translations.en, {
   'booking.next': 'Next month',
   'booking.date.empty': 'Choose a date from the calendar',
   'booking.date.selected': 'Selected date',
+  'booking.error.date': 'Please choose a date on the calendar.',
+  'booking.error.name': 'Please enter your name.',
+  'booking.error.email': 'Please enter a valid email.',
+  'booking.error.time': 'Please choose a meeting time.',
+  'booking.error.duration': 'Please choose a meeting length.',
+  'auth.label': 'Required step',
+  'auth.title': 'Sign in with Google to book.',
+  'auth.text': 'We use your Google account to confirm who is requesting the meeting.',
+  'auth.waiting': 'Please sign in before sending a request.',
+  'auth.ready': 'Signed in as',
+  'auth.configure': 'Add a Google OAuth client ID to enable sign-in.',
+  'auth.error': 'Google sign-in did not finish. Please try again.',
   'calendar.sun': 'Sun',
   'calendar.mon': 'Mon',
   'calendar.tue': 'Tue',
@@ -246,6 +265,18 @@ Object.assign(translations.ka, {
   'booking.next': 'შემდეგი თვე',
   'booking.date.empty': 'აირჩიეთ თარიღი კალენდრიდან',
   'booking.date.selected': 'არჩეული თარიღი',
+  'booking.error.date': 'გთხოვთ, კალენდარში აირჩიოთ თარიღი.',
+  'booking.error.name': 'გთხოვთ, ჩაწეროთ თქვენი სახელი.',
+  'booking.error.email': 'გთხოვთ, ჩაწეროთ სწორი ელ. ფოსტა.',
+  'booking.error.time': 'გთხოვთ, აირჩიოთ შეხვედრის დრო.',
+  'booking.error.duration': 'გთხოვთ, აირჩიოთ შეხვედრის ხანგრძლივობა.',
+  'auth.label': 'სავალდებულო ნაბიჯი',
+  'auth.title': 'დაჯავშნისთვის შედით Google-ით.',
+  'auth.text': 'Google ანგარიშს ვიყენებთ იმის დასადასტურებლად, ვინ ითხოვს შეხვედრას.',
+  'auth.waiting': 'მოთხოვნის გაგზავნამდე გთხოვთ, შეხვიდეთ.',
+  'auth.ready': 'შესული ხართ როგორც',
+  'auth.configure': 'Google-ით შესვლის ჩასართავად დაამატეთ OAuth client ID.',
+  'auth.error': 'Google-ით შესვლა ვერ დასრულდა. სცადეთ თავიდან.',
   'calendar.sun': 'კვ',
   'calendar.mon': 'ორ',
   'calendar.tue': 'სა',
@@ -352,6 +383,7 @@ const setLanguage = (language) => {
   localStorage.setItem('siteLanguage', selectedLanguage);
   renderCalendar();
   updateSelectedDateText();
+  updateAuthStatus();
 };
 
 menuButton?.addEventListener('click', () => {
@@ -398,6 +430,131 @@ const toDateKey = (date) => {
 };
 
 const getCalendarLocale = () => (document.documentElement.lang === 'ka' ? 'ka-GE' : 'en-US');
+
+const getTranslation = (key) => {
+  const language = document.documentElement.lang === 'ka' ? 'ka' : 'en';
+  return translations[language][key] || translations.en[key] || '';
+};
+
+const decodeJwtPayload = (token) => {
+  const payload = token.split('.')[1];
+  const normalizedPayload = payload.replace(/-/g, '+').replace(/_/g, '/');
+  const decodedPayload = decodeURIComponent(
+    atob(normalizedPayload)
+      .split('')
+      .map((char) => `%${char.charCodeAt(0).toString(16).padStart(2, '0')}`)
+      .join(''),
+  );
+  return JSON.parse(decodedPayload);
+};
+
+const setBookingLocked = (isLocked) => {
+  if (!bookingForm) return;
+  bookingForm.classList.toggle('is-locked', isLocked);
+  bookingForm.querySelectorAll('input, select, textarea, button').forEach((field) => {
+    if (field.closest('.auth-panel')) return;
+    field.disabled = isLocked;
+  });
+};
+
+const updateAuthStatus = () => {
+  if (!authStatus) return;
+
+  if (authorizedGoogleUser) {
+    authStatus.textContent = `${getTranslation('auth.ready')} ${authorizedGoogleUser.email}`;
+    authPanel?.classList.add('is-authorized');
+    setBookingLocked(false);
+    return;
+  }
+
+  authStatus.textContent = GOOGLE_CLIENT_ID.startsWith('YOUR_')
+    ? getTranslation('auth.configure')
+    : getTranslation('auth.waiting');
+  authPanel?.classList.remove('is-authorized');
+  setBookingLocked(true);
+};
+
+window.handleGoogleCredential = (response) => {
+  try {
+    const profile = decodeJwtPayload(response.credential);
+    authorizedGoogleUser = {
+      name: profile.name || '',
+      email: profile.email || '',
+    };
+    if (googleNameInput) googleNameInput.value = authorizedGoogleUser.name;
+    if (googleEmailInput) googleEmailInput.value = authorizedGoogleUser.email;
+  } catch {
+    authorizedGoogleUser = null;
+    if (authStatus) authStatus.textContent = getTranslation('auth.error');
+  }
+  updateAuthStatus();
+};
+
+const initGoogleSignIn = () => {
+  if (!googleButton || !window.google?.accounts?.id) return;
+
+  if (GOOGLE_CLIENT_ID.startsWith('YOUR_')) {
+    updateAuthStatus();
+    return;
+  }
+
+  window.google.accounts.id.initialize({
+    client_id: GOOGLE_CLIENT_ID,
+    callback: window.handleGoogleCredential,
+  });
+  window.google.accounts.id.renderButton(googleButton, {
+    theme: 'outline',
+    size: 'large',
+    shape: 'pill',
+    text: 'signin_with',
+  });
+  updateAuthStatus();
+};
+
+const setFieldError = (fieldName, messageKey) => {
+  const errorElement = bookingForm?.querySelector(`[data-error-for="${fieldName}"]`);
+  if (!errorElement) return;
+
+  errorElement.textContent = messageKey ? getTranslation(messageKey) : '';
+  errorElement.classList.toggle('is-visible', Boolean(messageKey));
+
+  const field = bookingForm.querySelector(`[name="${fieldName}"]`);
+  const fieldWrap = field?.closest('.form-field') || field?.closest('.duration-field');
+  fieldWrap?.classList.toggle('is-invalid', Boolean(messageKey));
+
+  if (fieldName === 'date') {
+    selectedDateOutput?.classList.toggle('is-invalid', Boolean(messageKey));
+  }
+};
+
+const clearFieldError = (fieldName) => setFieldError(fieldName, '');
+
+const validateBookingForm = () => {
+  const emailInput = bookingForm?.querySelector('[name="email"]');
+  const requiredFields = [
+    ['date', !bookingDateInput?.value, 'booking.error.date'],
+    ['name', !bookingForm?.querySelector('[name="name"]')?.value.trim(), 'booking.error.name'],
+    ['email', !emailInput?.validity.valid, 'booking.error.email'],
+    ['time', !bookingForm?.querySelector('[name="time"]')?.value, 'booking.error.time'],
+    ['duration', !bookingForm?.querySelector('[name="duration"]:checked'), 'booking.error.duration'],
+  ];
+
+  let firstInvalidField = '';
+  requiredFields.forEach(([fieldName, hasError, messageKey]) => {
+    setFieldError(fieldName, hasError ? messageKey : '');
+    if (hasError && !firstInvalidField) firstInvalidField = fieldName;
+  });
+
+  if (firstInvalidField) {
+    const target = firstInvalidField === 'date'
+      ? selectedDateOutput
+      : bookingForm.querySelector(`[name="${firstInvalidField}"]`);
+    target?.focus();
+    return false;
+  }
+
+  return true;
+};
 
 const updateSelectedDateText = () => {
   if (!selectedDateOutput) return;
@@ -453,6 +610,7 @@ const renderCalendar = () => {
     button.addEventListener('click', () => {
       selectedBookingDate = dateKey;
       if (bookingDateInput) bookingDateInput.value = selectedBookingDate;
+      clearFieldError('date');
       renderCalendar();
       updateSelectedDateText();
     });
@@ -473,17 +631,32 @@ calendarNext?.addEventListener('click', () => {
 renderCalendar();
 updateSelectedDateText();
 setLanguage(localStorage.getItem('siteLanguage') || 'en');
+setBookingLocked(Boolean(bookingForm));
+
+bookingForm?.querySelectorAll('[name="name"], [name="email"], [name="time"]').forEach((field) => {
+  field.addEventListener('input', () => clearFieldError(field.name));
+  field.addEventListener('change', () => clearFieldError(field.name));
+});
+
+bookingForm?.querySelectorAll('[name="duration"]').forEach((field) => {
+  field.addEventListener('change', () => clearFieldError('duration'));
+});
+
+window.addEventListener('load', () => {
+  initGoogleSignIn();
+  window.setTimeout(initGoogleSignIn, 700);
+});
 
 bookingForm?.addEventListener('submit', (event) => {
   event.preventDefault();
 
-  if (bookingDateInput && !bookingDateInput.value) {
-    updateSelectedDateText();
-    selectedDateOutput?.focus();
+  if (!authorizedGoogleUser) {
+    updateAuthStatus();
+    authPanel?.focus();
     return;
   }
 
-  if (!bookingForm.reportValidity()) return;
+  if (!validateBookingForm()) return;
 
   const data = new FormData(bookingForm);
   const selectedLanguage = document.documentElement.lang === 'ka' ? 'ka' : 'en';
@@ -505,9 +678,11 @@ bookingForm?.addEventListener('submit', (event) => {
         time: 'Time',
         duration: 'Duration',
         notes: 'Project notes',
+        google: 'Google account',
       };
 
   const body = [
+    `${labels.google || 'Google account'}: ${authorizedGoogleUser.email}`,
     `${labels.name}: ${data.get('name')}`,
     `${labels.email}: ${data.get('email')}`,
     `${labels.date}: ${data.get('date')}`,
