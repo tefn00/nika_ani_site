@@ -2,6 +2,7 @@ const menuButton = document.querySelector('.menu-toggle');
 const navigation = document.querySelector('.site-nav');
 const navLinks = navigation ? Array.from(navigation.querySelectorAll('a')) : [];
 const languageButtons = Array.from(document.querySelectorAll('[data-lang-option]'));
+const bookingForm = document.querySelector('#booking-form');
 
 const translations = {
   en: {
@@ -38,6 +39,17 @@ const translations = {
     'contact.eyebrow': 'HAVE A PROJECT?',
     'contact.title': "Let's make something great.",
     'contact.say': 'Say hello',
+    'booking.name': 'Your name',
+    'booking.email': 'Your email',
+    'booking.date': 'Meeting date',
+    'booking.time': 'Meeting time',
+    'booking.time.placeholder': 'Choose time',
+    'booking.duration': 'Meeting length',
+    'booking.duration.15': '15 min',
+    'booking.duration.30': '30 min',
+    'booking.notes': 'Project notes',
+    'booking.notes.placeholder': 'Tell us what you want to build',
+    'booking.send': 'Send!',
     'about.eyebrow': 'ABOUT US',
     'about.title': 'Personal website developers for businesses that need a stronger online presence.',
     'about.intro': 'We are Ani Mamucharashvili and Nika Tepnadze. We build websites for businesses that do not have a website yet, or already have one that does not represent them well enough.',
@@ -184,6 +196,17 @@ Object.assign(translations.ka, {
   'contact.eyebrow': 'გაქვთ პროექტი?',
   'contact.title': 'შევქმნათ რამე კარგი.',
   'contact.say': 'მოგვწერეთ',
+  'booking.name': 'თქვენი სახელი',
+  'booking.email': 'თქვენი ელ. ფოსტა',
+  'booking.date': 'შეხვედრის თარიღი',
+  'booking.time': 'შეხვედრის დრო',
+  'booking.time.placeholder': 'აირჩიეთ დრო',
+  'booking.duration': 'შეხვედრის ხანგრძლივობა',
+  'booking.duration.15': '15 წუთი',
+  'booking.duration.30': '30 წუთი',
+  'booking.notes': 'პროექტის დეტალები',
+  'booking.notes.placeholder': 'მოგვწერეთ, რისი შექმნა გსურთ',
+  'booking.send': 'გაგზავნა!',
   'about.eyebrow': 'ჩვენ შესახებ',
   'about.title': 'პერსონალური ვებსაიტების დეველოპერები ბიზნესებისთვის, რომლებსაც ძლიერი ონლაინ წარდგენა სჭირდებათ.',
   'about.intro': 'ჩვენ ვართ ანი მამუჩარაშვილი და ნიკა ტეფნაძე. ვქმნით ვებსაიტებს ბიზნესებისთვის, რომლებსაც ვებსაიტი ჯერ არ აქვთ, ან არსებული საიტი საკმარისად კარგად არ წარმოაჩენს მათ.',
@@ -265,6 +288,11 @@ const setLanguage = (language) => {
     if (translations[selectedLanguage][key]) element.setAttribute('content', translations[selectedLanguage][key]);
   });
 
+  document.querySelectorAll('[data-i18n-placeholder]').forEach((element) => {
+    const key = element.dataset.i18nPlaceholder;
+    if (translations[selectedLanguage][key]) element.setAttribute('placeholder', translations[selectedLanguage][key]);
+  });
+
   languageButtons.forEach((button) => {
     const isActive = button.dataset.langOption === selectedLanguage;
     button.classList.toggle('is-active', isActive);
@@ -311,3 +339,45 @@ languageButtons.forEach((button) => {
 setLanguage(localStorage.getItem('siteLanguage') || 'en');
 
 document.querySelector('#year').textContent = new Date().getFullYear();
+
+const dateInput = bookingForm?.querySelector('input[name="date"]');
+if (dateInput) dateInput.min = new Date().toISOString().split('T')[0];
+
+bookingForm?.addEventListener('submit', (event) => {
+  event.preventDefault();
+
+  if (!bookingForm.reportValidity()) return;
+
+  const data = new FormData(bookingForm);
+  const selectedLanguage = document.documentElement.lang === 'ka' ? 'ka' : 'en';
+  const labels = selectedLanguage === 'ka'
+    ? {
+        subject: 'ახალი შეხვედრის მოთხოვნა',
+        name: 'სახელი',
+        email: 'ელ. ფოსტა',
+        date: 'თარიღი',
+        time: 'დრო',
+        duration: 'ხანგრძლივობა',
+        notes: 'პროექტის დეტალები',
+      }
+    : {
+        subject: 'New meeting request',
+        name: 'Name',
+        email: 'Email',
+        date: 'Date',
+        time: 'Time',
+        duration: 'Duration',
+        notes: 'Project notes',
+      };
+
+  const body = [
+    `${labels.name}: ${data.get('name')}`,
+    `${labels.email}: ${data.get('email')}`,
+    `${labels.date}: ${data.get('date')}`,
+    `${labels.time}: ${data.get('time')}`,
+    `${labels.duration}: ${data.get('duration')}`,
+    `${labels.notes}: ${data.get('notes') || '-'}`,
+  ].join('\n');
+
+  window.location.href = `mailto:animamucharashvili@gmail.com,nikatepna2@gmail.com?subject=${encodeURIComponent(labels.subject)}&body=${encodeURIComponent(body)}`;
+});

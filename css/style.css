@@ -573,10 +573,13 @@ body {
 }
 
 .contact-box {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(360px, 1.2fr);
+  align-items: start;
+  gap: clamp(28px, 5vw, 72px);
   padding: clamp(45px, 7vw, 85px);
   background: var(--accent);
   border-radius: 28px;
-  text-align: center;
 }
 
 .contact-box .eyebrow {
@@ -584,12 +587,91 @@ body {
 }
 
 .contact-box h2 {
-  margin: 0 auto 32px;
+  margin: 0;
 }
 
 .contact-box .button {
   color: white;
   background: var(--ink);
+}
+
+.booking-form {
+  display: grid;
+  gap: 18px;
+  text-align: left;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.form-field {
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+  color: var(--ink);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+  width: 100%;
+  min-height: 48px;
+  padding: 12px 14px;
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid #d6d6d6;
+  border-radius: 12px;
+  font: inherit;
+  font-weight: 500;
+}
+
+.form-field textarea {
+  min-height: 112px;
+  resize: vertical;
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+  outline: 2px solid var(--ink);
+  outline-offset: 2px;
+}
+
+.duration-field {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 0;
+  border: 0;
+}
+
+.duration-field legend {
+  width: 100%;
+  margin-bottom: 2px;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.duration-field label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 14px;
+  background: var(--paper);
+  border: 1px solid #d6d6d6;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.booking-submit {
+  justify-self: start;
 }
 
 /* Footer */
@@ -784,6 +866,10 @@ body {
     height: clamp(260px, 65vw, 410px);
   }
 
+  .contact-box {
+    grid-template-columns: 1fr;
+  }
+
   .footer-main {
     grid-template-columns: 1fr 1fr;
   }
@@ -894,6 +980,14 @@ body {
     padding: 34px 20px;
     border-radius: 20px;
   }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .booking-submit {
+    width: 100%;
+  }
 }
 
 @media (max-width: 380px) {
@@ -926,7 +1020,9 @@ html[lang="ka"] .site-nav a {
 html[lang="ka"] .button,
 html[lang="ka"] .text-link,
 html[lang="ka"] .footer-links,
-html[lang="ka"] .footer-email {
+html[lang="ka"] .footer-email,
+html[lang="ka"] .form-field,
+html[lang="ka"] .duration-field {
   font-size: 0.92rem;
 }
 
