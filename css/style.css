@@ -247,8 +247,6 @@ body {
 }
 
 .about-process {
-  position: relative;
-  overflow: hidden;
   padding: 30px;
   background: var(--paper);
   border: 1px solid var(--line);
@@ -257,24 +255,10 @@ body {
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
-.about-process::before {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  content: "";
-  background: linear-gradient(135deg, rgba(255, 244, 191, 0.72), transparent 42%);
-  opacity: 0;
-  transition: opacity 0.25s ease;
-}
-
 .about-process:hover {
   border-color: #d6d1bd;
   box-shadow: 0 22px 48px #25251c1c;
   transform: translateY(-6px);
-}
-
-.about-process:hover::before {
-  opacity: 1;
 }
 
 .about-process h3,
@@ -372,15 +356,12 @@ body {
   width: 8px;
   height: 8px;
   content: "";
-  background: #fff4bf;
-  border: 1px solid #d6d1bd;
+  background: var(--ink);
   border-radius: 50%;
-  box-shadow: 0 0 0 5px rgba(255, 244, 191, 0.38);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition: transform 0.25s ease;
 }
 
 .profile-card:hover .profile-role::before {
-  box-shadow: 0 0 0 8px rgba(255, 244, 191, 0.5);
   transform: scale(1.2);
 }
 
@@ -439,13 +420,11 @@ body {
   place-items: center;
   border: 1px solid #bcbab2;
   border-radius: 50%;
-  transition: background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+  transition: border-color 0.25s ease, transform 0.25s ease;
 }
 
 .service-card:hover .service-icon {
-  background: #fff4bf;
-  border-color: #d6d1bd;
-  box-shadow: 0 0 0 8px rgba(255, 244, 191, 0.44);
+  border-color: var(--ink);
   transform: rotate(-8deg) scale(1.08);
 }
 
@@ -842,7 +821,6 @@ body {
 
 @media (prefers-reduced-motion: reduce) {
   .about-process,
-  .about-process::before,
   .skill-list span,
   .profile-card,
   .profile-card img,
