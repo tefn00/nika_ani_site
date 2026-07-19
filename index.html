@@ -25,13 +25,14 @@
           <a href="./about.html" data-i18n="nav.about">About us</a>
           <a href="#services" data-i18n="nav.services">Services</a>
           <a href="#projects" data-i18n="nav.projects">Projects</a>
+          <a href="./booking.html" data-i18n="nav.booking">Book</a>
           <a href="#contact" data-i18n="nav.contact">Contact</a>
         </nav>
         <div class="language-switch" aria-label="Language switch" data-i18n-aria-label="language.switch">
           <button class="language-option is-active" type="button" data-lang-option="en">EN</button>
           <button class="language-option" type="button" data-lang-option="ka">GE</button>
         </div>
-        <a class="button button-dark header-cta" href="#contact" data-i18n="nav.cta">Let's talk</a>
+        <a class="button button-dark header-cta" href="./booking.html" data-i18n="nav.cta">Let's talk</a>
       </div>
     </header>
 
@@ -106,48 +107,7 @@
             <p class="eyebrow" data-i18n="contact.eyebrow">HAVE A PROJECT?</p>
             <h2 data-i18n="contact.title">Let's make something great.</h2>
           </div>
-          <form class="booking-form" id="booking-form">
-            <div class="form-grid">
-              <label class="form-field">
-                <span data-i18n="booking.name">Your name</span>
-                <input type="text" name="name" autocomplete="name" required />
-              </label>
-              <label class="form-field">
-                <span data-i18n="booking.email">Your email</span>
-                <input type="email" name="email" autocomplete="email" required />
-              </label>
-              <label class="form-field">
-                <span data-i18n="booking.date">Meeting date</span>
-                <input type="date" name="date" required />
-              </label>
-              <label class="form-field">
-                <span data-i18n="booking.time">Meeting time</span>
-                <select name="time" required>
-                  <option value="" data-i18n="booking.time.placeholder">Choose time</option>
-                  <option value="09:00">09:00</option>
-                  <option value="10:00">10:00</option>
-                  <option value="11:00">11:00</option>
-                  <option value="12:00">12:00</option>
-                  <option value="13:00">13:00</option>
-                  <option value="14:00">14:00</option>
-                  <option value="15:00">15:00</option>
-                  <option value="16:00">16:00</option>
-                  <option value="17:00">17:00</option>
-                  <option value="18:00">18:00</option>
-                </select>
-              </label>
-            </div>
-            <fieldset class="duration-field">
-              <legend data-i18n="booking.duration">Meeting length</legend>
-              <label><input type="radio" name="duration" value="15 min" required /> <span data-i18n="booking.duration.15">15 min</span></label>
-              <label><input type="radio" name="duration" value="30 min" /> <span data-i18n="booking.duration.30">30 min</span></label>
-            </fieldset>
-            <label class="form-field">
-              <span data-i18n="booking.notes">Project notes</span>
-              <textarea name="notes" rows="4" data-i18n-placeholder="booking.notes.placeholder" placeholder="Tell us what you want to build"></textarea>
-            </label>
-            <button class="button button-dark booking-submit" type="submit"><span data-i18n="booking.send">Send!</span> <i class="fa-solid fa-paper-plane"></i></button>
-          </form>
+          <a class="button button-dark booking-submit" href="./booking.html"><span data-i18n="booking.open">Book a meeting</span> <i class="fa-solid fa-calendar-days"></i></a>
         </div>
       </section>
     </main>
@@ -155,7 +115,7 @@
     <footer class="site-footer">
       <div class="container footer-main">
         <div><a class="logo" href="#home"><img src="./img/na-logo.png" alt="Nika & Ani logo" data-i18n-alt="logo.alt" /></a><p data-i18n="footer.text">Thoughtful digital experiences, made together.</p></div>
-        <div class="footer-links"><a href="#services" data-i18n="nav.services">Services</a><a href="#projects" data-i18n="nav.projects">Projects</a><a href="#contact" data-i18n="nav.contact">Contact</a></div>
+        <div class="footer-links"><a href="#services" data-i18n="nav.services">Services</a><a href="#projects" data-i18n="nav.projects">Projects</a><a href="./booking.html" data-i18n="nav.booking">Book</a><a href="#contact" data-i18n="nav.contact">Contact</a></div>
         <a class="footer-email" href="mailto:hello@nikastudio.com">hello@nikastudio.com <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
       </div>
       <div class="container footer-bottom"><p><span data-i18n="footer.copyright">(c)</span> <span id="year"></span> Logo. <span data-i18n="footer.rights">All rights reserved.</span></p><a href="#home" data-i18n="footer.top">Back to top</a></div>

@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Book a meeting with Nika and Ani." data-i18n-content="meta.booking.description" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+    <script src="./js/script.js" defer></script>
+    <title data-i18n="meta.booking.title">Book a Meeting - Nika & Ani</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="logo" href="./index.html#home" aria-label="Home" data-i18n-aria-label="nav.home"><img src="./img/na-logo.png" alt="Nika & Ani logo" data-i18n-alt="logo.alt" /></a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+          <span class="sr-only" data-i18n="menu.open">Open menu</span><i class="fa-solid fa-bars"></i>
+        </button>
+        <nav class="site-nav" id="site-nav" aria-label="Main navigation" data-i18n-aria-label="nav.main">
+          <a href="./index.html#home" data-i18n="nav.home">Home</a>
+          <a href="./about.html" data-i18n="nav.about">About us</a>
+          <a href="./index.html#services" data-i18n="nav.services">Services</a>
+          <a href="./index.html#projects" data-i18n="nav.projects">Projects</a>
+          <a href="./booking.html" data-i18n="nav.booking">Book</a>
+          <a href="./index.html#contact" data-i18n="nav.contact">Contact</a>
+        </nav>
+        <div class="language-switch" aria-label="Language switch" data-i18n-aria-label="language.switch">
+          <button class="language-option is-active" type="button" data-lang-option="en">EN</button>
+          <button class="language-option" type="button" data-lang-option="ka">GE</button>
+        </div>
+        <a class="button button-dark header-cta" href="#booking" data-i18n="nav.cta">Let's talk</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="section booking-page" id="booking">
+        <div class="container">
+          <div class="section-heading booking-heading">
+            <p class="eyebrow" data-i18n="booking.eyebrow">BOOK A MEETING</p>
+            <h1 data-i18n="booking.title">Choose a date and time.</h1>
+            <p data-i18n="booking.text">Pick a day on the calendar, choose a time, and send us the meeting request.</p>
+          </div>
+
+          <div class="booking-shell">
+            <section class="calendar-panel" aria-label="Calendar" data-i18n-aria-label="booking.calendar.aria">
+              <div class="calendar-top">
+                <button class="calendar-nav" type="button" data-calendar-prev aria-label="Previous month" data-i18n-aria-label="booking.prev"><i class="fa-solid fa-chevron-left"></i></button>
+                <h2 data-calendar-month></h2>
+                <button class="calendar-nav" type="button" data-calendar-next aria-label="Next month" data-i18n-aria-label="booking.next"><i class="fa-solid fa-chevron-right"></i></button>
+              </div>
+              <div class="calendar-weekdays" aria-hidden="true">
+                <span data-i18n="calendar.sun">Sun</span>
+                <span data-i18n="calendar.mon">Mon</span>
+                <span data-i18n="calendar.tue">Tue</span>
+                <span data-i18n="calendar.wed">Wed</span>
+                <span data-i18n="calendar.thu">Thu</span>
+                <span data-i18n="calendar.fri">Fri</span>
+                <span data-i18n="calendar.sat">Sat</span>
+              </div>
+              <div class="calendar-grid" data-calendar-grid></div>
+            </section>
+
+            <form class="booking-form booking-form-page" id="booking-form">
+              <input type="hidden" name="date" data-booking-date required />
+              <div class="selected-date" data-selected-date data-i18n="booking.date.empty" tabindex="-1">Choose a date from the calendar</div>
+              <div class="form-grid">
+                <label class="form-field">
+                  <span data-i18n="booking.name">Your name</span>
+                  <input type="text" name="name" autocomplete="name" required />
+                </label>
+                <label class="form-field">
+                  <span data-i18n="booking.email">Your email</span>
+                  <input type="email" name="email" autocomplete="email" required />
+                </label>
+                <label class="form-field">
+                  <span data-i18n="booking.time">Meeting time</span>
+                  <select name="time" required>
+                    <option value="" data-i18n="booking.time.placeholder">Choose time</option>
+                    <option value="09:00">09:00</option>
+                    <option value="10:00">10:00</option>
+                    <option value="11:00">11:00</option>
+                    <option value="12:00">12:00</option>
+                    <option value="13:00">13:00</option>
+                    <option value="14:00">14:00</option>
+                    <option value="15:00">15:00</option>
+                    <option value="16:00">16:00</option>
+                    <option value="17:00">17:00</option>
+                    <option value="18:00">18:00</option>
+                  </select>
+                </label>
+              </div>
+              <fieldset class="duration-field">
+                <legend data-i18n="booking.duration">Meeting length</legend>
+                <label><input type="radio" name="duration" value="15 min" required /> <span data-i18n="booking.duration.15">15 min</span></label>
+                <label><input type="radio" name="duration" value="30 min" /> <span data-i18n="booking.duration.30">30 min</span></label>
+              </fieldset>
+              <label class="form-field">
+                <span data-i18n="booking.notes">Project notes</span>
+                <textarea name="notes" rows="4" data-i18n-placeholder="booking.notes.placeholder" placeholder="Tell us what you want to build"></textarea>
+              </label>
+              <button class="button button-dark booking-submit" type="submit"><span data-i18n="booking.send">Send!</span> <i class="fa-solid fa-paper-plane"></i></button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-main">
+        <div><a class="logo" href="./index.html#home"><img src="./img/na-logo.png" alt="Nika & Ani logo" data-i18n-alt="logo.alt" /></a><p data-i18n="footer.text">Thoughtful digital experiences, made together.</p></div>
+        <div class="footer-links"><a href="./index.html#services" data-i18n="nav.services">Services</a><a href="./index.html#projects" data-i18n="nav.projects">Projects</a><a href="./booking.html" data-i18n="nav.booking">Book</a><a href="./index.html#contact" data-i18n="nav.contact">Contact</a></div>
+        <a class="footer-email" href="mailto:hello@nikastudio.com">hello@nikastudio.com <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+      </div>
+      <div class="container footer-bottom"><p><span data-i18n="footer.copyright">(c)</span> <span id="year"></span> Logo. <span data-i18n="footer.rights">All rights reserved.</span></p><a href="#booking" data-i18n="footer.top">Back to top</a></div>
+    </footer>
+  </body>
+</html>
