@@ -120,6 +120,95 @@ const translations = {
   },
 };
 
+Object.assign(translations.en, {
+  'meta.home.title': 'Nika & Ani - Website Developers',
+  'meta.home.description': 'Personal website developers creating modern business websites.',
+  'meta.about.title': 'About Us - Nika & Ani',
+  'meta.about.description': 'About Ani Mamucharashvili and Nika Tepnadze, personal website developers.',
+  'nav.main': 'Main navigation',
+  'language.switch': 'Language switch',
+  'home.hero.alt': 'The people behind Nika and Ani',
+  'services.web.aria': 'Ask about web development',
+  'services.design.aria': 'Ask about UI and UX design',
+  'services.performance.aria': 'Ask about performance optimisation',
+  'projects.preview.alt': 'Website project preview',
+  'skills.aria': 'Programming languages we know',
+  'ani.photo.alt': 'Ani Mamucharashvili',
+  'nika.photo.alt': 'Nika Tepnadze',
+});
+
+Object.assign(translations.ka, {
+  'meta.home.title': 'ნიკა და ანი - ვებსაიტების დეველოპერები',
+  'meta.home.description': 'პერსონალური ვებსაიტების დეველოპერები, რომლებიც თანამედროვე ბიზნეს ვებსაიტებს ქმნიან.',
+  'meta.about.title': 'ჩვენ შესახებ - ნიკა და ანი',
+  'meta.about.description': 'ანი მამუჩარაშვილისა და ნიკა ტეფნაძის შესახებ, პერსონალური ვებსაიტების დეველოპერები.',
+  'menu.open': 'მენიუს გახსნა',
+  'nav.main': 'მთავარი ნავიგაცია',
+  'language.switch': 'ენის შეცვლა',
+  'nav.home': 'მთავარი',
+  'nav.about': 'ჩვენ შესახებ',
+  'nav.services': 'სერვისები',
+  'nav.projects': 'პროექტები',
+  'nav.contact': 'კონტაქტი',
+  'nav.cta': 'დაგვიკავშირდით',
+  'home.eyebrow': 'დიზაინი x დეველოპმენტი',
+  'home.title': 'ჩვენ ვქმნით ციფრულ გამოცდილებებს <em>ერთად.</em>',
+  'home.text': 'ჩვენ ვართ დეველოპერების წყვილი, რომელიც იდეებს სუფთა, ფუნქციურ და ლამაზ ვებსაიტებად აქცევს.',
+  'home.work': 'ნახეთ ჩვენი ნამუშევრები',
+  'home.contact': 'დაგვიკავშირდით',
+  'home.hero.alt': 'ნიკა და ანი',
+  'services.eyebrow': 'რას ვაკეთებთ',
+  'services.title': 'ვებსაიტებს ვქმნით ისე, როგორც ადამიანები რეალურად იყენებენ ვებს.',
+  'services.text': 'კრეატივსა და კოდს ვაერთიანებთ თანამედროვე ვებ გადაწყვეტილებების შესაქმნელად.',
+  'services.web.title': 'ვებ დეველოპმენტი',
+  'services.web.text': 'სწრაფი, რესპონსიული და მარტივად გამოსაყენებელი ვებსაიტები, რომლებიც ყველა ეკრანზე კარგად მუშაობს.',
+  'services.web.link': 'ავაწყოთ',
+  'services.web.aria': 'ვებ დეველოპმენტის შესახებ კითხვა',
+  'services.design.title': 'UI/UX დიზაინი',
+  'services.design.text': 'გასაგები და ინტუიციური ინტერფეისები, შექმნილი თქვენი აუდიტორიისა და მიზნებისთვის.',
+  'services.design.link': 'დავგეგმოთ დიზაინი',
+  'services.design.aria': 'UI და UX დიზაინის შესახებ კითხვა',
+  'services.performance.title': 'ოპტიმიზაცია',
+  'services.performance.text': 'გააზრებული გაუმჯობესებები, რომ თქვენი საიტი იყოს სწრაფი, გლუვი და სანდო.',
+  'services.performance.link': 'გავაუმჯობესოთ',
+  'services.performance.aria': 'ოპტიმიზაციის შესახებ კითხვა',
+  'projects.eyebrow': 'რჩეული ნამუშევრები',
+  'projects.title': 'რამდენიმე პროექტი, რომლითაც ვამაყობთ.',
+  'projects.more': 'მეტი პროექტის ნახვა',
+  'projects.brand': 'ბრენდის ვებსაიტი',
+  'projects.portfolio': 'კრეატიული პორტფოლიო',
+  'projects.business': 'ბიზნეს პლატფორმა',
+  'projects.preview.alt': 'ვებსაიტის პროექტის ხედი',
+  'contact.eyebrow': 'გაქვთ პროექტი?',
+  'contact.title': 'შევქმნათ რამე კარგი.',
+  'contact.say': 'მოგვწერეთ',
+  'about.eyebrow': 'ჩვენ შესახებ',
+  'about.title': 'პერსონალური ვებსაიტების დეველოპერები ბიზნესებისთვის, რომლებსაც ძლიერი ონლაინ παρουσία სჭირდებათ.',
+  'about.intro': 'ჩვენ ვართ ანი მამუჩარაშვილი და ნიკა ტეფნაძე. ვქმნით ვებსაიტებს ბიზნესებისთვის, რომლებსაც ვებსაიტი ჯერ არ აქვთ, ან არსებული საიტი საკმარისად კარგად არ წარმოაჩენს მათ.',
+  'about.approach.title': 'ჩვენი მიდგომა',
+  'about.approach.text': 'შეგვიძლია თქვენი ბიზნესისთვის წინასწარ მოვამზადოთ ვებსაიტი, გაჩვენოთ შედეგი და შემდეგ შემოგთავაზოთ ფასი. თუ ცვლილებები დაგჭირდებათ, შეგვიძლია შევცვალოთ დიზაინი, სტრუქტურა, კონტენტი ან ფუნქციები. საბოლოო ფასი ამ განახლებებზე იქნება დამოკიდებული.',
+  'skills.aria': 'პროგრამირების ენები, რომლებიც ვიცით',
+  'profile.role': 'დეველოპერი',
+  'ani.name': 'ანი მამუჩარაშვილი',
+  'ani.photo.alt': 'ანი მამუჩარაშვილი',
+  'ani.age': '19 წლის',
+  'ani.born': 'დაიბადა 2007 წლის 7 მარტს',
+  'ani.school': '2024 წელს დაამთავრა თბილისის N42 ფიზიკა-მათემატიკის საჯარო სკოლა, აკადემიკოს ილია ვეკუას სახელობის',
+  'ani.course': 'დაასრულა AI კურსი ესპანეთში',
+  'ani.university': 'სწავლობს კომპიუტერულ მეცნიერებასა და ხელოვნურ ინტელექტს BTU-ში, ბიზნესისა და ტექნოლოგიების უნივერსიტეტში',
+  'nika.name': 'ნიკა ტეფნაძე',
+  'nika.photo.alt': 'ნიკა ტეფნაძე',
+  'nika.age': '19 წლის',
+  'nika.born': 'დაიბადა 2006 წლის 1 ივნისს',
+  'nika.school': 'დაამთავრა 163-ე საჯარო სკოლა',
+  'nika.course': 'დაასრულა მზიურის პროგრამირების კურსი',
+  'nika.university': 'სწავლობს კომპიუტერულ მეცნიერებასა და ხელოვნურ ინტელექტს BTU-ში, ბიზნესისა და ტექნოლოგიების უნივერსიტეტში',
+  'footer.text': 'გააზრებული ციფრული გამოცდილებები, შექმნილი ერთად.',
+  'footer.copyright': '(c)',
+  'footer.rights': 'ყველა უფლება დაცულია.',
+  'footer.top': 'ზემოთ დაბრუნება',
+});
+
 const closeMenu = () => {
   navigation?.classList.remove('is-open');
   menuButton?.setAttribute('aria-expanded', 'false');
@@ -157,6 +246,21 @@ const setLanguage = (language) => {
   document.querySelectorAll('[data-i18n-html]').forEach((element) => {
     const key = element.dataset.i18nHtml;
     if (translations[selectedLanguage][key]) element.innerHTML = translations[selectedLanguage][key];
+  });
+
+  document.querySelectorAll('[data-i18n-aria-label]').forEach((element) => {
+    const key = element.dataset.i18nAriaLabel;
+    if (translations[selectedLanguage][key]) element.setAttribute('aria-label', translations[selectedLanguage][key]);
+  });
+
+  document.querySelectorAll('[data-i18n-alt]').forEach((element) => {
+    const key = element.dataset.i18nAlt;
+    if (translations[selectedLanguage][key]) element.setAttribute('alt', translations[selectedLanguage][key]);
+  });
+
+  document.querySelectorAll('[data-i18n-content]').forEach((element) => {
+    const key = element.dataset.i18nContent;
+    if (translations[selectedLanguage][key]) element.setAttribute('content', translations[selectedLanguage][key]);
   });
 
   languageButtons.forEach((button) => {
