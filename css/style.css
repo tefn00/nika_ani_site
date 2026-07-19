@@ -81,11 +81,11 @@ html[lang="ka"] body {
   left: 8%;
   height: 4px;
   content: "";
-  background: #fff4bf;
+  background: var(--ink);
   border-radius: 999px;
   box-shadow:
-    0 0 10px 3px rgba(255, 244, 191, 0.78),
-    0 0 24px 8px rgba(255, 255, 240, 0.62);
+    0 0 10px 3px rgba(23, 23, 23, 0.32),
+    0 0 24px 8px rgba(23, 23, 23, 0.18);
   opacity: 0;
   transform: translateY(7px) scaleX(0.6);
   transition: opacity 0.2s, transform 0.2s;
