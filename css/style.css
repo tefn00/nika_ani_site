@@ -53,9 +53,15 @@ html[lang="ka"] body {
 }
 
 .logo {
-  font-size: 1.8rem;
-  font-weight: 700;
-  letter-spacing: 0;
+  display: inline-flex;
+  align-items: center;
+  width: 118px;
+  flex: 0 0 auto;
+}
+
+.logo img {
+  width: 100%;
+  height: auto;
 }
 
 .site-nav {
@@ -590,7 +596,10 @@ html[lang="ka"] body {
 }
 
 .footer-main .logo {
-  color: white;
+  width: 132px;
+  padding: 6px 10px;
+  background: white;
+  border-radius: 10px;
 }
 
 .footer-main p {
