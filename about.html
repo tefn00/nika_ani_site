@@ -18,16 +18,20 @@
       <div class="container header-inner">
         <a class="logo" href="./index.html#home" aria-label="Home">logo</a>
         <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
-          <span class="sr-only">Open menu</span><i class="fa-solid fa-bars"></i>
+          <span class="sr-only" data-i18n="menu.open">Open menu</span><i class="fa-solid fa-bars"></i>
         </button>
         <nav class="site-nav" id="site-nav" aria-label="Main navigation">
-          <a href="./index.html#home">Home</a>
-          <a href="./about.html">About us</a>
-          <a href="./index.html#services">Services</a>
-          <a href="./index.html#projects">Projects</a>
-          <a href="./index.html#contact">Contact</a>
+          <a href="./index.html#home" data-i18n="nav.home">Home</a>
+          <a href="./about.html" data-i18n="nav.about">About us</a>
+          <a href="./index.html#services" data-i18n="nav.services">Services</a>
+          <a href="./index.html#projects" data-i18n="nav.projects">Projects</a>
+          <a href="./index.html#contact" data-i18n="nav.contact">Contact</a>
         </nav>
-        <a class="button button-dark header-cta" href="./index.html#contact">Let's talk</a>
+        <div class="language-switch" aria-label="Language switch">
+          <button class="language-option is-active" type="button" data-lang-option="en">EN</button>
+          <button class="language-option" type="button" data-lang-option="ka">GE</button>
+        </div>
+        <a class="button button-dark header-cta" href="./index.html#contact" data-i18n="nav.cta">Let's talk</a>
       </div>
     </header>
 
@@ -36,17 +40,17 @@
         <div class="container">
           <div class="about-layout">
             <div class="section-heading about-heading">
-              <p class="eyebrow">ABOUT US</p>
-              <h1>Personal website developers for businesses that need a stronger online presence.</h1>
+              <p class="eyebrow" data-i18n="about.eyebrow">ABOUT US</p>
+              <h1 data-i18n="about.title">Personal website developers for businesses that need a stronger online presence.</h1>
               <p>
-                We are Ani Mamucharashvili and Nika Tepnadze. We build websites for businesses that do not have a website yet, or already have one that does not represent them well enough.
+                <span data-i18n="about.intro">We are Ani Mamucharashvili and Nika Tepnadze. We build websites for businesses that do not have a website yet, or already have one that does not represent them well enough.</span>
               </p>
             </div>
 
             <div class="about-process">
-              <h2>Our approach</h2>
+              <h2 data-i18n="about.approach.title">Our approach</h2>
               <p>
-                We can prepare a website for your business in advance, show you the result, and then offer a price for it. If you want changes, we can adjust the design, structure, content, or features, and the final price will change depending on those updates.
+                <span data-i18n="about.approach.text">We can prepare a website for your business in advance, show you the result, and then offer a price for it. If you want changes, we can adjust the design, structure, content, or features, and the final price will change depending on those updates.</span>
               </p>
               <div class="skill-list" aria-label="Programming languages we know">
                 <span>C#</span>
@@ -63,14 +67,14 @@
             <article class="profile-card">
               <img src="./img/website1.webp" alt="Placeholder portrait for Ani Mamucharashvili" />
               <div class="profile-content">
-                <p class="profile-role">Developer</p>
+                <p class="profile-role" data-i18n="profile.role">Developer</p>
                 <h2>Ani Mamucharashvili</h2>
                 <ul>
-                  <li>19 years old</li>
-                  <li>Born on 7 March 2007</li>
-                  <li>Graduated from Tbilisi Public School No. 42, Physics and Mathematics, named after Academician Ilia Vekua, in 2024</li>
-                  <li>Finished an AI course in Spain</li>
-                  <li>Studying Computer Science and Artificial Intelligence at BTU, Business and Technology University</li>
+                  <li data-i18n="ani.age">19 years old</li>
+                  <li data-i18n="ani.born">Born on 7 March 2007</li>
+                  <li data-i18n="ani.school">Graduated from Tbilisi Public School No. 42, Physics and Mathematics, named after Academician Ilia Vekua, in 2024</li>
+                  <li data-i18n="ani.course">Finished an AI course in Spain</li>
+                  <li data-i18n="ani.university">Studying Computer Science and Artificial Intelligence at BTU, Business and Technology University</li>
                 </ul>
               </div>
             </article>
@@ -78,16 +82,16 @@
             <article class="profile-card">
               <img src="./img/website2.webp" alt="Placeholder portrait for Nika Tepnadze" />
               <div class="profile-content">
-                <p class="profile-role">Developer</p>
+                <p class="profile-role" data-i18n="profile.role">Developer</p>
                 <h2>Nika Tepnadze</h2>
                 <ul>
-                  <li>19 years old</li>
-                  <li>Born on 1 June 2006</li>
-                  <li>Graduated from 163 Public School</li>
-                  <li>Finished the Mziuri programming course</li>
-                  <li>Studying Computer Science and Artificial Intelligence at BTU, Business and Technology University</li>
-                  <li>Builds clean, responsive websites with practical features for real businesses</li>
-                  <li>Works with Ani on design decisions, development, and website improvements</li>
+                  <li data-i18n="nika.age">19 years old</li>
+                  <li data-i18n="nika.born">Born on 1 June 2006</li>
+                  <li data-i18n="nika.school">Graduated from 163 Public School</li>
+                  <li data-i18n="nika.course">Finished the Mziuri programming course</li>
+                  <li data-i18n="nika.university">Studying Computer Science and Artificial Intelligence at BTU, Business and Technology University</li>
+                  <li data-i18n="nika.builds">Builds clean, responsive websites with practical features for real businesses</li>
+                  <li data-i18n="nika.works">Works with Ani on design decisions, development, and website improvements</li>
                 </ul>
               </div>
             </article>
@@ -98,11 +102,11 @@
 
     <footer class="site-footer">
       <div class="container footer-main">
-        <div><a class="logo" href="./index.html#home">logo</a><p>Thoughtful digital experiences, made together.</p></div>
-        <div class="footer-links"><a href="./index.html#services">Services</a><a href="./index.html#projects">Projects</a><a href="./index.html#contact">Contact</a></div>
+        <div><a class="logo" href="./index.html#home">logo</a><p data-i18n="footer.text">Thoughtful digital experiences, made together.</p></div>
+        <div class="footer-links"><a href="./index.html#services" data-i18n="nav.services">Services</a><a href="./index.html#projects" data-i18n="nav.projects">Projects</a><a href="./index.html#contact" data-i18n="nav.contact">Contact</a></div>
         <a class="footer-email" href="mailto:hello@nikastudio.com">hello@nikastudio.com <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
       </div>
-      <div class="container footer-bottom"><p>(c) <span id="year"></span> Logo. All rights reserved.</p><a href="#about">Back to top</a></div>
+      <div class="container footer-bottom"><p><span data-i18n="footer.copyright">(c)</span> <span id="year"></span> Logo. <span data-i18n="footer.rights">All rights reserved.</span></p><a href="#about" data-i18n="footer.top">Back to top</a></div>
     </footer>
   </body>
 </html>
