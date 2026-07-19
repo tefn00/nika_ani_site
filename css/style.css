@@ -574,12 +574,16 @@ body {
 
 .contact-box {
   display: grid;
-  grid-template-columns: minmax(0, 0.8fr) minmax(360px, 1.2fr);
-  align-items: start;
-  gap: clamp(28px, 5vw, 72px);
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: clamp(24px, 5vw, 64px);
   padding: clamp(45px, 7vw, 85px);
   background: var(--accent);
   border-radius: 28px;
+}
+
+.contact-intro {
+  min-width: 0;
 }
 
 .contact-box .eyebrow {
@@ -672,6 +676,14 @@ body {
 
 .booking-submit {
   justify-self: start;
+}
+
+.contact-box .booking-submit {
+  min-width: 240px;
+  min-height: 66px;
+  padding: 0 30px;
+  font-size: 1.05rem;
+  white-space: nowrap;
 }
 
 /* Booking */
@@ -973,6 +985,10 @@ body {
 
   .contact-box {
     grid-template-columns: 1fr;
+  }
+
+  .contact-box .booking-submit {
+    justify-self: start;
   }
 
   .booking-shell {
