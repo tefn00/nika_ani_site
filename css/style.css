@@ -605,65 +605,6 @@ body {
   text-align: left;
 }
 
-.booking-form.is-locked .form-grid,
-.booking-form.is-locked .duration-field,
-.booking-form.is-locked .form-field,
-.booking-form.is-locked .booking-submit,
-.booking-form.is-locked .selected-date {
-  opacity: 0.52;
-}
-
-.auth-panel {
-  display: grid;
-  gap: 14px;
-  padding: 18px;
-  background: var(--accent);
-  border: 1px solid var(--line);
-  border-radius: 18px;
-}
-
-.auth-label {
-  margin-bottom: 4px;
-  color: var(--muted);
-  font-size: 0.72rem;
-  font-weight: 800;
-  letter-spacing: 0.13em;
-  text-transform: uppercase;
-}
-
-.auth-panel h2 {
-  font-size: 1.35rem;
-  line-height: 1.15;
-}
-
-.auth-panel p:not(.auth-label) {
-  color: var(--muted);
-}
-
-.google-signin-wrap {
-  min-height: 44px;
-}
-
-.auth-status {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 0.9rem;
-  font-weight: 700;
-}
-
-.auth-status::before {
-  width: 10px;
-  height: 10px;
-  content: "";
-  background: #8a8a8a;
-  border-radius: 50%;
-}
-
-.auth-panel.is-authorized .auth-status::before {
-  background: #17833a;
-}
-
 .form-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -705,54 +646,12 @@ body {
   outline-offset: 2px;
 }
 
-.form-field.is-invalid input,
-.form-field.is-invalid select,
-.duration-field.is-invalid,
-.selected-date.is-invalid {
-  border-color: #171717;
-  box-shadow: 0 0 0 4px rgba(23, 23, 23, 0.1);
-}
-
-.form-field.is-invalid > span:first-child,
-.duration-field.is-invalid legend {
-  color: var(--ink);
-}
-
-.form-error {
-  display: none;
-  align-items: center;
-  gap: 8px;
-  margin: 2px 0 0;
-  color: var(--ink);
-  font-size: 0.78rem;
-  font-weight: 700;
-}
-
-.form-error::before {
-  display: grid;
-  width: 18px;
-  height: 18px;
-  flex: 0 0 auto;
-  place-items: center;
-  color: white;
-  content: "!";
-  background: var(--ink);
-  border-radius: 50%;
-  font-size: 0.72rem;
-  line-height: 1;
-}
-
-.form-error.is-visible {
-  display: inline-flex;
-}
-
 .duration-field {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
   padding: 0;
-  border: 1px solid transparent;
-  border-radius: 18px;
+  border: 0;
 }
 
 .duration-field legend {

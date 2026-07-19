@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="./css/reset.css" />
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
-    <script src="https://accounts.google.com/gsi/client" async defer></script>
     <script src="./js/script.js" defer></script>
     <title data-i18n="meta.booking.title">Book a Meeting - Nika & Ani</title>
   </head>
@@ -65,31 +64,17 @@
               <div class="calendar-grid" data-calendar-grid></div>
             </section>
 
-            <form class="booking-form booking-form-page" id="booking-form" novalidate>
-              <section class="auth-panel" data-auth-panel tabindex="-1">
-                <div>
-                  <p class="auth-label" data-i18n="auth.label">Required step</p>
-                  <h2 data-i18n="auth.title">Sign in with Google to book.</h2>
-                  <p data-i18n="auth.text">We use your Google account to confirm who is requesting the meeting.</p>
-                </div>
-                <div class="google-signin-wrap" data-google-button></div>
-                <p class="auth-status" data-auth-status data-i18n="auth.waiting">Please sign in before sending a request.</p>
-              </section>
+            <form class="booking-form booking-form-page" id="booking-form">
               <input type="hidden" name="date" data-booking-date required />
-              <input type="hidden" name="googleName" data-google-name />
-              <input type="hidden" name="googleEmail" data-google-email />
               <div class="selected-date" data-selected-date data-i18n="booking.date.empty" tabindex="-1">Choose a date from the calendar</div>
-              <p class="form-error" data-error-for="date"></p>
               <div class="form-grid">
                 <label class="form-field">
                   <span data-i18n="booking.name">Your name</span>
                   <input type="text" name="name" autocomplete="name" required />
-                  <span class="form-error" data-error-for="name"></span>
                 </label>
                 <label class="form-field">
                   <span data-i18n="booking.email">Your email</span>
                   <input type="email" name="email" autocomplete="email" required />
-                  <span class="form-error" data-error-for="email"></span>
                 </label>
                 <label class="form-field">
                   <span data-i18n="booking.time">Meeting time</span>
@@ -106,14 +91,12 @@
                     <option value="17:00">17:00</option>
                     <option value="18:00">18:00</option>
                   </select>
-                  <span class="form-error" data-error-for="time"></span>
                 </label>
               </div>
               <fieldset class="duration-field">
                 <legend data-i18n="booking.duration">Meeting length</legend>
                 <label><input type="radio" name="duration" value="15 min" required /> <span data-i18n="booking.duration.15">15 min</span></label>
                 <label><input type="radio" name="duration" value="30 min" /> <span data-i18n="booking.duration.30">30 min</span></label>
-                <span class="form-error" data-error-for="duration"></span>
               </fieldset>
               <label class="form-field">
                 <span data-i18n="booking.notes">Project notes</span>
