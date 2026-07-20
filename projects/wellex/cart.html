@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cart - Wellex</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body class="dashboard-home whoop-home topic-page">
+<div class="page-photo-backdrop" aria-hidden="true">
+  <img src="assets/wellex_front_back.jpg" alt="">
+</div>
+
+<header data-shared-header data-active-page="colors"></header>
+
+<div class="cart-page">
+  <div class="cart-inner">
+
+    <!-- CART ITEMS -->
+    <div class="cart-items-section">
+      <!-- Rendered by JS -->
+    </div>
+
+    <!-- ORDER SUMMARY -->
+    <div class="cart-summary">
+      <div class="cart-summary-title">Order Summary</div>
+
+      <div class="summary-row">
+        <span>Subtotal</span>
+        <span class="summary-subtotal">$0.00</span>
+      </div>
+      <div class="summary-row">
+        <span>Shipping</span>
+            <span class="summary-shipping" style="color:#ffffff">FREE</span>
+      </div>
+      <div class="summary-row">
+        <span>Tax (estimated)</span>
+        <span>Calculated at checkout</span>
+      </div>
+      <div class="summary-row total">
+        <span>Total</span>
+        <span class="summary-total-val">$0.00</span>
+      </div>
+
+      <div class="promo-input">
+        <input type="text" placeholder="Promo code"/>
+        <button onclick="showToast('Invalid promo code')">Apply</button>
+      </div>
+
+      <a href="checkout.html">
+        <button class="cart-summary-btn">Proceed to Checkout -></button>
+      </a>
+
+      <div style="text-align:center;margin-top:16px">
+        <div style="display:flex;justify-content:center;gap:16px;font-size:1.4rem;margin-bottom:8px">
+          PAY LOCK BOX
+        </div>
+        <div style="font-size:0.75rem;color:var(--gray)">Secure checkout - Free returns - 2-year warranty</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cart-recommendations-wrap">
+    <div class="cart-recommendations">
+      <div class="cart-recommendations-head">
+        <h3>Explore more finishes</h3>
+        <p>Compare the real product colors.</p>
+      </div>
+      <div class="cart-recommendations-grid">
+        <article class="cart-recommendation-card">
+          <a href="product.html?color=classic-black" class="cart-recommendation-media">
+            <img src="assets/businessman_black.png" alt="Classic Black Wellex watch in a business setting"/>
+          </a>
+          <div class="cart-recommendation-body">
+            <div class="cart-recommendation-name">Classic Black</div>
+            <p>Quiet, sharp, and easy to wear.</p>
+            <button class="cart-recommendation-btn" onclick="addToCart('classic-black','subscription')">Add to Cart</button>
+          </div>
+        </article>
+
+        <article class="cart-recommendation-card">
+          <a href="product.html?color=midnight-navy" class="cart-recommendation-media">
+            <img src="assets/lecturer_watch.png" alt="Midnight Navy Wellex watch in a lecture setting"/>
+          </a>
+          <div class="cart-recommendation-body">
+            <div class="cart-recommendation-name">Midnight Navy</div>
+            <p>A cooler, darker technical tone.</p>
+            <button class="cart-recommendation-btn" onclick="addToCart('midnight-navy','subscription')">Add to Cart</button>
+          </div>
+        </article>
+
+        <article class="cart-recommendation-card">
+          <a href="product.html?color=forest-green" class="cart-recommendation-media">
+            <img src="assets/hiking_watch.png" alt="Forest Green Wellex watch in a hiking setting"/>
+          </a>
+          <div class="cart-recommendation-body">
+            <div class="cart-recommendation-name">Forest Finish</div>
+            <p>A grounded finish with a premium feel.</p>
+            <button class="cart-recommendation-btn" onclick="addToCart('forest-green','subscription')">Add to Cart</button>
+          </div>
+        </article>
+
+        <article class="cart-recommendation-card">
+          <a href="product.html?color=crimson-red" class="cart-recommendation-media">
+            <img src="assets/marathon_watch.png" alt="Crimson Red Wellex watch in a marathon setting"/>
+          </a>
+          <div class="cart-recommendation-body">
+            <div class="cart-recommendation-name">Crimson Red</div>
+            <p>The boldest finish in the lineup.</p>
+            <button class="cart-recommendation-btn" onclick="addToCart('crimson-red','subscription')">Add to Cart</button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer data-shared-footer></footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
+

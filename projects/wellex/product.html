@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Wellex | Product Detail</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body class="dashboard-home whoop-home topic-page">
+<div class="page-photo-backdrop" aria-hidden="true">
+  <img src="assets/wellex_front_back.jpg" alt="">
+</div>
+
+<header data-shared-header data-active-page="colors"></header>
+
+<div class="product-detail">
+  <div class="product-detail-breadcrumb">
+    <a href="index.html">Overview</a>
+    <span>/</span>
+    <a href="shop.html">Colors</a>
+    <span>/</span>
+    <span id="breadcrumb-name">Classic Black</span>
+  </div>
+
+  <div class="product-detail-inner">
+    <div class="product-detail-visual">
+      <div class="product-detail-image-box product-stage zoom-card" id="product-zoom-card" data-zoom-image="assets/classic-black.png">
+        <button class="zoom-toggle" type="button" aria-pressed="false">Enable zoom</button>
+        <div class="zoom-pane" aria-hidden="true"></div>
+        <div class="glow-bg" id="watch-glow-bg"></div>
+        <div class="variant-photo variant-photo-stage variant-classic-black variant-photo-real" id="main-watch-photo">
+          <img src="assets/classic-black.png" alt="Classic Black watch product photo"/>
+        </div>
+      </div>
+      <div class="product-thumbnails">
+        <button class="product-thumb active" type="button" data-product="classic-black" onclick="switchProduct('classic-black')">
+          <div class="variant-photo variant-photo-thumb variant-classic-black variant-photo-real">
+            <img src="assets/classic-black.png" alt="Classic Black watch"/>
+          </div>
+        </button>
+        <button class="product-thumb" type="button" data-product="midnight-navy" onclick="switchProduct('midnight-navy')">
+          <div class="variant-photo variant-photo-thumb variant-midnight-navy variant-photo-real">
+            <img src="assets/navy.png" alt="Midnight Navy watch"/>
+          </div>
+        </button>
+        <button class="product-thumb" type="button" data-product="forest-green" onclick="switchProduct('forest-green')">
+          <div class="variant-photo variant-photo-thumb variant-forest-green variant-photo-real">
+            <img src="assets/forest-green.png" alt="Forest Green watch"/>
+          </div>
+        </button>
+        <button class="product-thumb" type="button" data-product="crimson-red" onclick="switchProduct('crimson-red')">
+          <div class="variant-photo variant-photo-thumb variant-crimson-red variant-photo-real">
+            <img src="assets/orange.jpeg" alt="Wellex watch with original orange band"/>
+          </div>
+        </button>
+      </div>
+      <section class="product-review-studio" id="product-review-studio" aria-labelledby="product-review-heading">
+        <div class="product-review-cover">
+          <span class="eyebrow">Add a Review</span>
+          <strong id="product-review-heading">Rate this finish and leave a comment.</strong>
+          <span class="product-review-cover-meta">
+            <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <span id="product-review-average-copy">4.9 average from 2,847 reviews</span>
+          </span>
+          <button class="btn-outline product-review-open-btn" id="product-review-cover" type="button" aria-expanded="false" aria-controls="product-review-panel">Add the review</button>
+        </div>
+        <div class="product-review-panel" id="product-review-panel" hidden>
+          <div class="product-review-studio-head">
+            <span class="eyebrow">Leave a Review</span>
+            <h2>Rate this finish.</h2>
+            <p>Pick a star rating and leave your comment directly on this color.</p>
+          </div>
+          <form class="product-review-form-inline" id="product-review-form-inline">
+            <div class="product-review-stars-inline" id="product-review-stars-inline" aria-label="Choose rating">
+              <button type="button" class="product-review-star is-active" data-rating="1" aria-label="1 star">&#9733;</button>
+              <button type="button" class="product-review-star is-active" data-rating="2" aria-label="2 stars">&#9733;</button>
+              <button type="button" class="product-review-star is-active" data-rating="3" aria-label="3 stars">&#9733;</button>
+              <button type="button" class="product-review-star is-active" data-rating="4" aria-label="4 stars">&#9733;</button>
+              <button type="button" class="product-review-star is-active" data-rating="5" aria-label="5 stars">&#9733;</button>
+            </div>
+            <input type="hidden" id="product-review-rating-input" value="5"/>
+            <input type="text" id="product-review-name-inline" name="review-name" maxlength="40" placeholder="Your name" required/>
+            <textarea id="product-review-message-inline" name="review-message" rows="4" maxlength="280" placeholder="Write your comment here" required></textarea>
+            <div class="product-review-actions">
+              <button class="btn-outline product-review-submit" type="submit">Post Review</button>
+              <button class="product-review-cancel" id="product-review-cancel" type="button">Cancel</button>
+            </div>
+          </form>
+          <div class="product-review-feedback" id="product-review-feedback" aria-live="polite"></div>
+        </div>
+        <div class="product-review-list-inline" id="product-review-list-inline"></div>
+      </section>
+    </div>
+
+    <div class="product-detail-info">
+      <div class="product-detail-label">Wellex Band Collection</div>
+      <h1 class="product-detail-title" id="product-title">Classic Black</h1>
+      <p class="product-detail-subtitle" id="product-subtitle">
+        A clean, quiet finish for daily wear.
+      </p>
+
+      <div class="product-rating">
+        <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        <span id="product-rating-score" style="font-size:0.95rem;font-weight:700">4.9</span>
+        <span class="rating-count" id="product-rating-count">(2,847 reviews)</span>
+      </div>
+
+      <div class="color-selector">
+        <div class="color-selector-label">Selected Color <span id="selected-color-name" class="selected-color-name">Classic Black</span></div>
+        <div class="color-options">
+          <button class="color-option active" type="button" data-product="classic-black" style="background:#0D0D0D" onclick="switchProduct('classic-black')">
+            <span class="color-option-label">Black</span>
+          </button>
+          <button class="color-option" type="button" data-product="midnight-navy" style="background:#1B2A4A" onclick="switchProduct('midnight-navy')">
+            <span class="color-option-label">Navy</span>
+          </button>
+          <button class="color-option" type="button" data-product="forest-green" style="background:#1A3D2B" onclick="switchProduct('forest-green')">
+            <span class="color-option-label">Green</span>
+          </button>
+          <button class="color-option" type="button" data-product="crimson-red" style="background:#7A1515" onclick="switchProduct('crimson-red')">
+            <span class="color-option-label">Red</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="variant-highlight">
+        <span class="eyebrow">Color Mood</span>
+        <h3 id="variant-mood">Minimal / stealth</h3>
+        <p id="variant-copy">A clean, versatile finish for daily wear.</p>
+      </div>
+
+      <div class="pricing-table">
+        <div class="pricing-row header">
+          <span>Plan</span>
+          <span>Price</span>
+          <span>Includes</span>
+        </div>
+        <div class="pricing-row">
+          <span style="font-weight:700">One-Time</span>
+          <span class="pricing-highlight">$279</span>
+          <span style="color:var(--light-gray);font-size:0.8rem">Band + dashboard access</span>
+        </div>
+        <div class="pricing-row" style="background:rgba(255,255,255,0.04)">
+          <span style="font-weight:700">Subscription</span>
+          <span class="pricing-highlight">$179<span style="font-size:0.75rem;font-weight:400;color:var(--light-gray)">/mo</span></span>
+          <span style="color:var(--light-gray);font-size:0.8rem">Band + premium program</span>
+        </div>
+      </div>
+
+      <div class="detail-btns">
+        <button class="btn-subscribe" id="add-to-cart-btn" data-product="classic-black" onclick="setCurrentSelection(this.dataset.product,'subscription'); openHealthDeal(this.dataset.product,'subscription')">
+          Choose Subscription
+        </button>
+        <button class="btn-buynow" id="buy-now-btn" data-product="classic-black" onclick="setCurrentSelection(this.dataset.product,'one-time'); openHealthDeal(this.dataset.product,'one-time')">
+          Buy One-Time
+        </button>
+      </div>
+
+      <div class="product-features-list">
+        <div class="product-feature-item">Four selectable band finishes</div>
+        <div class="product-feature-item">Premium woven texture with matte module</div>
+        <div class="product-feature-item">24/7 health and recovery tracking</div>
+        <div class="product-feature-item">Pairs with the Wellex dashboard experience</div>
+        <div class="product-feature-item">Designed for daily wear and visual distinction</div>
+      </div>
+
+      <div class="health-deal-teaser">
+        <div class="health-deal-copy">
+          <span class="eyebrow">Health Deal Wheel</span>
+          <h3>Earn `0.3%` to `5%` off.</h3>
+          <p>Answer a few questions, then reveal your exact discount.</p>
+        </div>
+        <div class="health-deal-miniwheel" aria-hidden="true"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="section compare-band">
+  <div class="compare-band-copy">
+    <div class="section-label">Need Another Color?</div>
+    <h2 class="section-title">Switch colors instantly.</h2>
+    <p class="section-sub">Compare finishes before you buy.</p>
+  </div>
+  <div class="compare-band-panel">
+    <a class="compare-band-row link-row" href="shop.html#classic-black"><span>Classic Black</span><strong>Explore</strong></a>
+    <a class="compare-band-row link-row" href="shop.html#midnight-navy"><span>Midnight Navy</span><strong>Explore</strong></a>
+    <a class="compare-band-row link-row" href="shop.html#forest-green"><span>Forest Green</span><strong>Explore</strong></a>
+    <a class="compare-band-row link-row" href="shop.html#crimson-red"><span>Crimson Red</span><strong>Explore</strong></a>
+  </div>
+</section>
+
+<div class="health-deal-modal" id="health-deal-modal" aria-hidden="true">
+  <div class="health-deal-backdrop" data-health-close></div>
+  <div class="health-deal-dialog">
+    <button class="health-deal-close" type="button" aria-label="Close deal game" data-health-close>x</button>
+    <div class="health-deal-side">
+      <div class="health-deal-kicker">Insight Deal</div>
+      <h2>Read your health style. Spin for your price.</h2>
+      <p>Three quick rounds reveal your exact discount.</p>
+      <div class="health-deal-stats">
+        <div class="health-chip">Score-based pricing</div>
+        <div class="health-chip">Discount: `0.3%` to `5%`</div>
+        <div class="health-chip" id="health-plan-chip">Plan: Subscription</div>
+      </div>
+      <div class="health-progress"><span id="health-progress-bar"></span></div>
+    </div>
+    <div class="health-deal-main">
+      <div class="health-quiz-stage" id="health-quiz-stage">
+        <div class="health-step" id="health-step">Round 1 / 3</div>
+        <h3 class="health-question" id="health-question"></h3>
+        <div class="health-options" id="health-options"></div>
+      </div>
+      <div class="health-wheel-stage hidden" id="health-wheel-stage">
+        <div class="health-step">Your wheel is ready</div>
+        <h3 class="health-question">Spin the Health Deal Wheel</h3>
+        <div class="health-wheel-shell">
+          <div class="health-wheel-pointer"></div>
+          <div class="health-wheel" id="health-wheel"></div>
+        </div>
+        <p class="health-wheel-copy" id="health-wheel-copy">Your answers set one exact discount. Spin to reveal it.</p>
+        <div class="health-wheel-actions">
+          <button class="btn-primary" type="button" id="health-spin-btn">Spin For Discount</button>
+        </div>
+      </div>
+      <div class="health-result-stage hidden" id="health-result-stage">
+        <div class="health-step">Deal unlocked</div>
+        <h3 class="health-question" id="health-result-title"></h3>
+        <p class="health-result-copy" id="health-result-copy"></p>
+        <div class="health-winning-badge" id="health-winning-badge">0.0%</div>
+        <div class="health-result-pricebox">
+          <div><span>Original</span><strong id="health-original-price">$179.00</strong></div>
+          <div><span>Discount</span><strong id="health-discount-percent">0.0%</strong></div>
+          <div><span>New price</span><strong id="health-final-price">$179.00</strong></div>
+        </div>
+        <div class="health-wheel-actions">
+          <button class="btn-primary" type="button" id="health-claim-btn">Claim Discount</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer data-shared-footer></footer>
+
+<script src="js/main.js"></script>
+<script>
+const productVariants = {
+  'classic-black': {
+    name: 'Classic Black',
+    glow: 'radial-gradient(circle, rgba(13,13,13,0.85) 0%, transparent 72%)',
+    image: 'assets/classic-black.png',
+    alt: 'Classic Black watch product photo',
+    subtitle: 'Minimal, stealthy, and clean. The quietest colorway in the line.',
+    mood: 'Minimal / stealth',
+    copy: 'Built for users who want the most neutral, versatile presence on wrist.',
+    rating: 4.9,
+    reviewCount: 2847,
+    recentReviews: [
+      { name: 'Leah', rating: 5, message: 'Looks refined on wrist and disappears into daily outfits in the best way.' },
+      { name: 'Marcus', rating: 5, message: 'Clean finish, premium texture, and the easiest color to wear every day.' }
+    ]
+  },
+  'midnight-navy': {
+    name: 'Midnight Navy',
+    glow: 'radial-gradient(circle, rgba(27,42,74,0.78) 0%, transparent 72%)',
+    image: 'assets/navy.png',
+    alt: 'Midnight Navy watch product photo',
+    subtitle: 'Cooler and more technical. A refined darker blue with a sharper tone.',
+    mood: 'Technical / cool',
+    copy: 'Best fit for a cleaner, modern, slightly more engineered look.',
+    rating: 4.8,
+    reviewCount: 2431,
+    recentReviews: [
+      { name: 'Nina', rating: 5, message: 'The navy finish feels sharp without looking loud. Very polished.' },
+      { name: 'Ethan', rating: 4, message: 'Great color if you want something darker than black but still understated.' }
+    ]
+  },
+  'forest-green': {
+    name: 'Forest Green',
+    glow: 'radial-gradient(circle, rgba(26,61,43,0.78) 0%, transparent 72%)',
+    image: 'assets/forest-green.png',
+    alt: 'Forest Green watch product photo',
+    subtitle: 'Balanced and grounded. A softer premium finish with natural depth.',
+    mood: 'Balanced / earthy',
+    copy: 'For users who want something premium and distinct without going loud.',
+    rating: 4.9,
+    reviewCount: 1984,
+    recentReviews: [
+      { name: 'Sofia', rating: 5, message: 'The green reads premium and warm in person. It feels the most unique.' },
+      { name: 'Jon', rating: 5, message: 'Great contrast with the module. Looks elevated without trying too hard.' }
+    ]
+  },
+  'crimson-red': {
+    name: 'Crimson Red',
+    glow: 'radial-gradient(circle, rgba(122,21,21,0.82) 0%, transparent 72%)',
+    image: 'assets/orange.jpeg',
+    alt: 'Wellex watch with original orange band',
+    subtitle: 'The strongest statement piece in the collection and the most editorial.',
+    mood: 'Bold / signature',
+    copy: 'Built for people who want the watch to read immediately and unapologetically.',
+    rating: 4.9,
+    reviewCount: 1672,
+    recentReviews: [
+      { name: 'Ava', rating: 5, message: 'This one stands out immediately. The most expressive finish by far.' },
+      { name: 'Daniel', rating: 5, message: 'Bold but still premium. It gives the page the strongest personality.' }
+    ]
+  }
+};
+
+const productReviewStorageKey = 'wellex-product-reviews-v1';
+let activeReviewProductId = 'classic-black';
+
+function getStoredProductReviews() {
+  try {
+    return JSON.parse(localStorage.getItem(productReviewStorageKey)) || {};
+  } catch (error) {
+    return {};
+  }
+}
+
+function saveStoredProductReviews(reviewMap) {
+  localStorage.setItem(productReviewStorageKey, JSON.stringify(reviewMap));
+}
+
+function getProductReviewSummary(productId) {
+  const product = productVariants[productId];
+  if (!product) return { average: 5, count: 0 };
+  const storedReviews = getStoredProductReviews()[productId] || [];
+  const totalScore = (product.rating * product.reviewCount) + storedReviews.reduce((sum, review) => sum + Number(review.rating || 0), 0);
+  const totalCount = product.reviewCount + storedReviews.length;
+  return {
+    average: totalCount ? totalScore / totalCount : product.rating,
+    count: totalCount
+  };
+}
+
+function formatProductReviewCount(count) {
+  return Number(count || 0).toLocaleString('en-US');
+}
+
+function getReviewStarsMarkup(rating) {
+  const safeRating = Math.max(0, Math.min(5, Number(rating || 0)));
+  return `${'&#9733;'.repeat(safeRating)}${'&#9734;'.repeat(5 - safeRating)}`;
+}
+
+function renderProductReviewPanel(productId) {
+  const product = productVariants[productId];
+  const reviewList = document.getElementById('product-review-list-inline');
+  const averageCopy = document.getElementById('product-review-average-copy');
+  const score = document.getElementById('product-rating-score');
+  const count = document.getElementById('product-rating-count');
+  if (!product || !reviewList || !averageCopy || !score || !count) return;
+
+  const storedReviews = (getStoredProductReviews()[productId] || []).map((review, index) => ({
+    ...review,
+    storageIndex: index,
+    isCustom: true
+  })).reverse();
+  const summary = getProductReviewSummary(productId);
+  const visibleReviews = [
+    ...storedReviews,
+    ...product.recentReviews.map((review) => ({ ...review, isCustom: false }))
+  ].slice(0, 3);
+
+  averageCopy.textContent = `${summary.average.toFixed(1)} average from ${formatProductReviewCount(summary.count)} reviews`;
+  score.textContent = summary.average.toFixed(1);
+  count.textContent = `(${formatProductReviewCount(summary.count)} reviews)`;
+
+  reviewList.innerHTML = visibleReviews.map((review) => `
+    <article class="product-review-entry">
+      <div class="product-review-entry-top">
+        <strong>${review.name}</strong>
+        <span>${'★'.repeat(Number(review.rating || 5))}${'☆'.repeat(5 - Number(review.rating || 5))}</span>
+      </div>
+      <p>${review.message}</p>
+    </article>
+  `).join('');
+}
+
+function initInlineProductReviews() {
+  const form = document.getElementById('product-review-form-inline');
+  const feedback = document.getElementById('product-review-feedback');
+  const ratingInput = document.getElementById('product-review-rating-input');
+  const starButtons = [...document.querySelectorAll('.product-review-star')];
+  const nameInput = document.getElementById('product-review-name-inline');
+  const messageInput = document.getElementById('product-review-message-inline');
+  const cover = document.getElementById('product-review-cover');
+  const panel = document.getElementById('product-review-panel');
+  const cancel = document.getElementById('product-review-cancel');
+  if (!form || !feedback || !ratingInput || !nameInput || !messageInput || !starButtons.length || !cover || !panel || !cancel) return;
+
+  const paintStars = (rating) => {
+    starButtons.forEach((button) => {
+      button.classList.toggle('is-active', Number(button.dataset.rating || 0) <= rating);
+    });
+  };
+
+  const openPanel = () => {
+    panel.hidden = false;
+    cover.setAttribute('aria-expanded', 'true');
+    nameInput.focus();
+  };
+
+  const closePanel = () => {
+    panel.hidden = true;
+    cover.setAttribute('aria-expanded', 'false');
+  };
+
+  cover.addEventListener('click', openPanel);
+  cancel.addEventListener('click', closePanel);
+
+  starButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      const rating = Number(button.dataset.rating || 5);
+      ratingInput.value = String(rating);
+      paintStars(rating);
+    });
+  });
+
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const name = nameInput.value.trim();
+    const message = messageInput.value.trim();
+    const rating = Number(ratingInput.value || 5);
+    if (!name || !message) return;
+
+    const reviewMap = getStoredProductReviews();
+    const nextReview = { name, message, rating };
+    reviewMap[activeReviewProductId] = [...(reviewMap[activeReviewProductId] || []), nextReview];
+    saveStoredProductReviews(reviewMap);
+
+    form.reset();
+    ratingInput.value = '5';
+    paintStars(5);
+    feedback.textContent = `Your review was added to ${productVariants[activeReviewProductId].name}.`;
+    renderProductReviewPanel(activeReviewProductId);
+    closePanel();
+  });
+
+  document.getElementById('product-review-list-inline')?.addEventListener('click', (event) => {
+    const target = event.target;
+    if (!(target instanceof HTMLElement)) return;
+    const deleteIndex = target.getAttribute('data-review-delete');
+    if (deleteIndex === null) return;
+
+    const reviewMap = getStoredProductReviews();
+    const reviews = [...(reviewMap[activeReviewProductId] || [])];
+    reviews.splice(Number(deleteIndex), 1);
+    reviewMap[activeReviewProductId] = reviews;
+    saveStoredProductReviews(reviewMap);
+    feedback.textContent = 'Your review was deleted.';
+    renderProductReviewPanel(activeReviewProductId);
+  });
+
+  paintStars(5);
+  renderProductReviewPanel(activeReviewProductId);
+}
+
+function renderProductReviewPanel(productId) {
+  const product = productVariants[productId];
+  const reviewList = document.getElementById('product-review-list-inline');
+  const averageCopy = document.getElementById('product-review-average-copy');
+  const score = document.getElementById('product-rating-score');
+  const count = document.getElementById('product-rating-count');
+  if (!product || !reviewList || !averageCopy || !score || !count) return;
+
+  const storedReviews = (getStoredProductReviews()[productId] || []).map((review, index) => ({
+    ...review,
+    storageIndex: index,
+    isCustom: true
+  })).reverse();
+  const summary = getProductReviewSummary(productId);
+  const visibleReviews = [
+    ...storedReviews,
+    ...product.recentReviews.map((review) => ({ ...review, isCustom: false }))
+  ].slice(0, 3);
+
+  averageCopy.textContent = `${summary.average.toFixed(1)} average from ${formatProductReviewCount(summary.count)} reviews`;
+  score.textContent = summary.average.toFixed(1);
+  count.textContent = `(${formatProductReviewCount(summary.count)} reviews)`;
+
+  reviewList.innerHTML = visibleReviews.map((review) => `
+    <article class="product-review-entry">
+      <div class="product-review-entry-top">
+        <strong>${review.name}</strong>
+        <span>${getReviewStarsMarkup(review.rating)}</span>
+      </div>
+      <p>${review.message}</p>
+      ${review.isCustom ? `<button class="product-review-delete" type="button" data-review-delete="${review.storageIndex}">Delete comment</button>` : ''}
+    </article>
+  `).join('');
+}
+
+function switchProduct(productId) {
+  const product = productVariants[productId];
+  if (!product) return;
+  activeReviewProductId = productId;
+  if (typeof setCurrentSelection === 'function') {
+    setCurrentSelection(productId, 'subscription');
+  }
+
+  document.querySelectorAll('.product-thumb').forEach((thumb) => {
+    thumb.classList.toggle('active', thumb.dataset.product === productId);
+  });
+
+  document.querySelectorAll('.color-option').forEach((option) => {
+    option.classList.toggle('active', option.dataset.product === productId);
+  });
+
+  const photo = document.getElementById('main-watch-photo');
+  photo.style.opacity = '0';
+  photo.style.transform = 'scale(0.96)';
+
+  setTimeout(() => {
+    const realPhotoClass = ['classic-black', 'midnight-navy', 'forest-green', 'crimson-red'].includes(productId) ? ' variant-photo-real' : '';
+    photo.className = `variant-photo variant-photo-stage variant-${productId}${realPhotoClass}`;
+    photo.innerHTML = `<img src="${product.image}" alt="${product.alt}"/>`;
+    document.getElementById('product-zoom-card').dataset.zoomImage = product.image;
+    const zoomPane = document.querySelector('#product-zoom-card .zoom-pane');
+    if (zoomPane) zoomPane.style.backgroundImage = `url('${product.image}')`;
+    photo.style.opacity = '1';
+    photo.style.transform = 'scale(1)';
+  }, 180);
+
+  document.getElementById('watch-glow-bg').style.background = product.glow;
+  document.getElementById('product-title').textContent = product.name;
+  document.getElementById('product-subtitle').textContent = product.subtitle;
+  document.getElementById('selected-color-name').textContent = product.name;
+  document.getElementById('breadcrumb-name').textContent = product.name;
+  document.getElementById('variant-mood').textContent = product.mood;
+  document.getElementById('variant-copy').textContent = product.copy;
+  document.getElementById('add-to-cart-btn').dataset.product = productId;
+  document.getElementById('add-to-cart-btn').dataset.plan = 'subscription';
+  document.getElementById('buy-now-btn').dataset.product = productId;
+  document.getElementById('buy-now-btn').dataset.plan = 'one-time';
+  renderProductReviewPanel(productId);
+
+  const url = new URL(window.location.href);
+  url.searchParams.set('color', productId);
+  window.history.replaceState({}, '', url);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  initInlineProductReviews();
+  const params = new URLSearchParams(window.location.search);
+  const selected = params.get('color') || 'classic-black';
+  switchProduct(selected);
+});
+</script>
+</body>
+</html>
+
+
+

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ka">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MID Barbershop</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="MID Barbershop">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M4 4l16 16M20 4L4 20M8.2 8.2 4 4m11.8 4.2L20 4M8.2 15.8 4 20m11.8-4.2L20 20" /></svg>
+        </span>
+        <span class="brand-main">MID</span>
+        <span class="brand-sub">BARBERSHOP</span>
+      </a>
+
+      <nav class="nav-links" aria-label="მთავარი ნავიგაცია">
+        <a href="#top">მთავარი</a>
+        <a href="#about">ჩვენს შესახებ</a>
+        <a href="#services">სერვისები</a>
+        <a href="#masters">მასტერები</a>
+        <a href="#gallery">გალერეა</a>
+        <a href="#contact">კონტაქტი</a>
+      </nav>
+
+      <a class="btn btn-primary header-cta" href="#booking">
+        დაჯავშნე ვიზიტი
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 2v4m8-4v4M3 10h18M5 5h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z" /></svg>
+      </a>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-photo photo photo-hero" aria-hidden="true"></div>
+        <div class="hero-content">
+          <h1>შენი სტილი.<br /><span>ჩვენი ხელოვნება.</span></h1>
+          <p>Mid Barbershop - ადგილი, სადაც კლასიკა ხვდება ხარისხს და სტილს.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#booking">
+              დაჯავშნე ვიზიტი
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 2v4m8-4v4M3 10h18M5 5h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z" /></svg>
+            </a>
+            <a class="btn btn-outline" href="#about">ჩვენს შესახებ</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="features" id="about" aria-label="ჩვენი უპირატესობები">
+        <article>
+          <span class="feature-icon scissors"></span>
+          <h3>პროფესიონალი მასტერები</h3>
+          <p>გამოცდილი და სტილით მუშა გუნდი</p>
+        </article>
+        <article>
+          <span class="feature-icon chair"></span>
+          <h3>კომფორტული გარემო</h3>
+          <p>მყუდრო და მამაკაცური ატმოსფერო</p>
+        </article>
+        <article>
+          <span class="feature-icon bottle"></span>
+          <h3>პრემიუმ ხარისხი</h3>
+          <p>მხოლოდ მაღალი ხარისხის პროდუქტები</p>
+        </article>
+        <article>
+          <span class="feature-icon clock"></span>
+          <h3>ზუსტი დრო</h3>
+          <p>ვკონტროლებთ დროს, რასაც აფასებთ</p>
+        </article>
+      </section>
+
+      <section class="split-section" id="services">
+        <aside class="section-aside">
+          <p class="eyebrow">სერვისები</p>
+          <h2>ჩვენი სერვისები</h2>
+          <span class="heading-rule"></span>
+          <a class="btn btn-outline" href="#services">ყველა სერვისი</a>
+        </aside>
+        <div class="service-grid">
+          <article class="service-card">
+            <div class="card-photo photo crop-service-1"></div>
+            <span class="card-icon scissors"></span>
+            <h3>თმის შეჭრა</h3>
+            <p class="price">30₾</p>
+          </article>
+          <article class="service-card">
+            <div class="card-photo photo crop-service-2"></div>
+            <span class="card-icon beard"></span>
+            <h3>წვერის მოვლა</h3>
+            <p class="price">20₾</p>
+          </article>
+          <article class="service-card">
+            <div class="card-photo photo crop-service-3"></div>
+            <span class="card-icon razor"></span>
+            <h3>კლასიკური პარსვა</h3>
+            <p class="price">25₾</p>
+          </article>
+          <article class="service-card">
+            <div class="card-photo photo crop-service-4"></div>
+            <span class="card-icon kid"></span>
+            <h3>ბავშვის თმის შეჭრა</h3>
+            <p class="price">20₾</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="split-section" id="masters">
+        <aside class="section-aside">
+          <p class="eyebrow">მასტერები</p>
+          <h2>ჩვენი მასტერები</h2>
+          <span class="heading-rule"></span>
+          <a class="btn btn-outline" href="#masters">ყველა მასტერი</a>
+        </aside>
+        <div class="master-grid">
+          <article class="master-card">
+            <div class="master-photo photo crop-master-1"></div>
+            <h3>გიორგი</h3>
+            <p>მასტერი-ბარბერი</p>
+            <div class="social-mini"><span>◎</span><span>✓</span></div>
+          </article>
+          <article class="master-card">
+            <div class="master-photo photo crop-master-2"></div>
+            <h3>ლევანი</h3>
+            <p>მასტერი-ბარბერი</p>
+            <div class="social-mini"><span>◎</span><span>✓</span></div>
+          </article>
+          <article class="master-card">
+            <div class="master-photo photo crop-master-3"></div>
+            <h3>დავითი</h3>
+            <p>მასტერი-ბარბერი</p>
+            <div class="social-mini"><span>◎</span><span>✓</span></div>
+          </article>
+          <article class="master-card">
+            <div class="master-photo photo crop-master-4"></div>
+            <h3>მიშა</h3>
+            <p>მასტერი-ბარბერი</p>
+            <div class="social-mini"><span>◎</span><span>✓</span></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="split-section gallery-section" id="gallery">
+        <aside class="section-aside">
+          <p class="eyebrow">გალერეა</p>
+          <h2>ჩვენი ნამუშევრები</h2>
+          <span class="heading-rule"></span>
+        </aside>
+        <div class="gallery-grid">
+          <div class="photo crop-gallery-1"></div>
+          <div class="photo crop-gallery-2"></div>
+          <div class="photo crop-gallery-3"></div>
+          <div class="photo crop-gallery-4"></div>
+          <div class="photo crop-gallery-5"></div>
+        </div>
+      </section>
+
+      <section class="booking-banner" id="booking">
+        <div class="booking-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M8 2v4m8-4v4M3 10h18M6 14h3m3 0h3m-9 4h3m3 0h2M5 5h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z" /></svg>
+        </div>
+        <div>
+          <h2>დაჯავშნე ვიზიტი ონლაინ</h2>
+          <p>აირჩიე დრო და მასტერი მარტივად წამში.</p>
+        </div>
+        <a class="btn btn-primary" href="#contact">
+          დაჯავშნე ვიზიტი
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 2v4m8-4v4M3 10h18M5 5h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z" /></svg>
+        </a>
+      </section>
+    </main>
+
+    <footer class="site-footer" id="contact">
+      <div class="footer-grid">
+        <div>
+          <a class="brand footer-brand" href="#top" aria-label="MID Barbershop">
+            <span class="brand-mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M4 4l16 16M20 4L4 20M8.2 8.2 4 4m11.8 4.2L20 4M8.2 15.8 4 20m11.8-4.2L20 20" /></svg>
+            </span>
+            <span class="brand-main">MID</span>
+            <span class="brand-sub">BARBERSHOP</span>
+          </a>
+          <p>Mid Barbershop - მეტი ვიდრე სალონი. ეს არის სტილი, ნდობა და ხარისხი.</p>
+        </div>
+        <div>
+          <h3>ბმულები</h3>
+          <a href="#top">მთავარი</a>
+          <a href="#about">ჩვენს შესახებ</a>
+          <a href="#services">სერვისები</a>
+          <a href="#masters">მასტერები</a>
+          <a href="#gallery">გალერეა</a>
+          <a href="#contact">კონტაქტი</a>
+        </div>
+        <div>
+          <h3>კონტაქტი</h3>
+          <p>+995 555 12 34 56</p>
+          <p>ქ. თბილისი, ვაკე, ჭავჭავაძის გამზ. 5</p>
+          <p>ყოველდღე 10:00 - 21:00</p>
+        </div>
+        <div>
+          <h3>გამოგვიყევი</h3>
+          <div class="socials">
+            <a href="#" aria-label="Instagram">◎</a>
+            <a href="#" aria-label="Facebook">f</a>
+            <a href="#" aria-label="TikTok">♪</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2024 Mid Barbershop. ყველა უფლება დაცულია.</p>
+        <p>Created with passion. ♥</p>
+      </div>
+    </footer>
+    <script>
+      const headerLinks = document.querySelectorAll(".site-header a");
+
+      headerLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          headerLinks.forEach((item) => item.classList.remove("is-header-active"));
+          link.classList.add("is-header-active");
+        });
+      });
+    </script>
+  </body>
+</html>

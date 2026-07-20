@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Checkout - Wellex</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body class="dashboard-home whoop-home topic-page">
+<div class="page-photo-backdrop" aria-hidden="true">
+  <img src="assets/wellex_front_back.jpg" alt="">
+</div>
+
+<header data-shared-header data-active-page="colors"></header>
+
+<div class="checkout-page">
+  <div class="checkout-inner">
+    <div class="checkout-form-section">
+      <h1 class="checkout-page-title">Checkout</h1>
+
+      <form id="checkout-form" onsubmit="return false">
+        <div class="checkout-section">
+          <div class="checkout-section-title">Shipping Information</div>
+          <div class="form-grid">
+            <div class="form-group">
+              <label class="form-label">First Name</label>
+              <input class="form-input" type="text" placeholder="Alex" required/>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Last Name</label>
+              <input class="form-input" type="text" placeholder="Chen" required/>
+            </div>
+            <div class="form-group full">
+              <label class="form-label">Email</label>
+              <input class="form-input" type="email" placeholder="alex@example.com" required/>
+            </div>
+            <div class="form-group full">
+              <label class="form-label">Address</label>
+              <input class="form-input" type="text" placeholder="123 Fitness Street" required/>
+            </div>
+            <div class="form-group">
+              <label class="form-label">City</label>
+              <input class="form-input" type="text" placeholder="New York" required/>
+            </div>
+            <div class="form-group">
+              <label class="form-label">ZIP Code</label>
+              <input class="form-input" type="text" placeholder="10001" required/>
+            </div>
+            <div class="form-group full">
+              <label class="form-label">Country</label>
+              <select class="form-select form-input" required>
+                <option value="">Select country</option>
+                <option value="US">United States</option>
+                <option value="GB">United Kingdom</option>
+                <option value="CA">Canada</option>
+                <option value="AU">Australia</option>
+                <option value="DE">Germany</option>
+                <option value="FR">France</option>
+                <option value="JP">Japan</option>
+                <option value="GE">Georgia</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="checkout-section">
+          <div class="checkout-section-title">Shipping Method</div>
+          <div style="display:flex;flex-direction:column;gap:12px">
+            <label style="display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,0.06);border:1.5px solid rgba(255,255,255,0.18);border-radius:12px;padding:16px 20px;cursor:pointer">
+              <div style="display:flex;align-items:center;gap:12px">
+                <input type="radio" name="shipping" value="free" checked style="accent-color:#ffffff"/>
+                <div>
+                  <div style="font-size:0.875rem;font-weight:600">Standard Shipping</div>
+                  <div style="font-size:0.75rem;color:var(--gray)">5-7 business days</div>
+                </div>
+              </div>
+              <span style="color:#ffffff;font-weight:700">FREE</span>
+            </label>
+            <label style="display:flex;align-items:center;justify-content:space-between;background:var(--dark-2);border:1px solid var(--dark-border);border-radius:12px;padding:16px 20px;cursor:pointer">
+              <div style="display:flex;align-items:center;gap:12px">
+                <input type="radio" name="shipping" value="express" style="accent-color:#ffffff"/>
+                <div>
+                  <div style="font-size:0.875rem;font-weight:600">Express Shipping</div>
+                  <div style="font-size:0.75rem;color:var(--gray)">2-3 business days</div>
+                </div>
+              </div>
+              <span style="font-weight:700">$12.99</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="checkout-section">
+          <div class="checkout-section-title">Payment</div>
+          <div style="display:flex;gap:12px;margin-bottom:20px">
+            <button type="button" style="flex:1;background:rgba(255,255,255,0.08);border:1.5px solid rgba(255,255,255,0.18);color:var(--white);padding:12px;border-radius:10px;font-size:0.85rem;font-weight:600;cursor:pointer">Card</button>
+            <button type="button" style="flex:1;background:var(--dark-2);border:1px solid var(--dark-border);color:var(--lighter-gray);padding:12px;border-radius:10px;font-size:0.85rem;font-weight:600;cursor:pointer">Apple Pay</button>
+            <button type="button" style="flex:1;background:var(--dark-2);border:1px solid var(--dark-border);color:var(--lighter-gray);padding:12px;border-radius:10px;font-size:0.85rem;font-weight:600;cursor:pointer">PayPal</button>
+          </div>
+          <div class="form-grid">
+            <div class="form-group full">
+              <label class="form-label">Card Number</label>
+              <input class="form-input" type="text" placeholder="1234  5678  9012  3456" maxlength="19" required/>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Expiry Date</label>
+              <input class="form-input" type="text" placeholder="MM / YY" maxlength="7" required/>
+            </div>
+            <div class="form-group">
+              <label class="form-label">CVV</label>
+              <input class="form-input" type="text" placeholder="123" maxlength="4" required/>
+            </div>
+            <div class="form-group full">
+              <label class="form-label">Name on Card</label>
+              <input class="form-input" type="text" placeholder="Alex Chen" required/>
+            </div>
+          </div>
+        </div>
+
+        <button type="submit" class="checkout-place-btn" onclick="placeOrder()">
+          Place Order ->
+        </button>
+      </form>
+    </div>
+
+    <div class="checkout-summary">
+      <div class="checkout-summary-title">Order Summary</div>
+
+      <div class="checkout-items-list">
+        <div style="text-align:center;padding:20px;color:var(--gray);font-size:0.875rem">
+          No items in cart.
+          <br/><a href="shop.html" style="color:#ffffff;font-weight:600">Shop now -></a>
+        </div>
+      </div>
+
+      <div class="summary-row" style="margin-top:8px">
+        <span>Subtotal</span>
+        <span class="checkout-subtotal">$0.00</span>
+      </div>
+      <div class="summary-row">
+        <span>Shipping</span>
+        <span style="color:#ffffff">FREE</span>
+      </div>
+      <div class="summary-row total">
+        <span>Total</span>
+        <span class="checkout-total" style="color:#ffffff">$0.00</span>
+      </div>
+
+      <button type="button" class="checkout-place-btn" onclick="placeOrder()">
+        Place Order ->
+      </button>
+
+      <div style="text-align:center;margin-top:16px">
+        <div style="font-size:0.72rem;color:var(--gray);display:flex;align-items:center;justify-content:center;gap:6px">
+          <span>256-bit SSL encryption - Secure payment</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer data-shared-footer></footer>
+
+<script src="js/main.js"></script>
+<script>
+function placeOrder() {
+  const form = document.getElementById('checkout-form');
+  if (form && !form.checkValidity()) {
+    form.reportValidity();
+    return;
+  }
+  cart = [];
+  saveCart();
+  document.querySelector('.checkout-inner').innerHTML = `
+    <div style="grid-column:1/-1;text-align:center;padding:80px 20px">
+      <div style="font-size:5rem;margin-bottom:24px">OK</div>
+      <div style="display:inline-block;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.18);color:var(--white);padding:8px 20px;border-radius:20px;font-size:0.8rem;font-weight:700;letter-spacing:1px;margin-bottom:24px;text-transform:uppercase">Order Confirmed</div>
+      <h2 style="font-size:2.5rem;font-weight:900;letter-spacing:-1.5px;margin-bottom:16px">Order Placed!</h2>
+      <p style="color:var(--light-gray);margin-bottom:8px;font-size:1rem;max-width:440px;margin-left:auto;margin-right:auto;line-height:1.7">
+        Thank you for your Wellex order. You'll receive a confirmation email shortly with your tracking info.
+      </p>
+      <p style="color:var(--gray);font-size:0.85rem;margin-bottom:40px">Estimated delivery: 5-7 business days</p>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+        <a href="index.html" class="btn-primary">Back to Home</a>
+        <a href="shop.html" class="btn-outline">Keep Shopping</a>
+      </div>
+    </div>
+  `;
+  updateCartBadge();
+}
+</script>
+</body>
+</html>
+
