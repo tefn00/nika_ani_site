@@ -156,10 +156,21 @@ Object.assign(translations.en, {
   'language.switch': 'Language switch',
   'logo.alt': 'Nika & Ani logo',
   'home.hero.alt': 'Premium web design studio visual with responsive website mockups',
+  'home.signature.one': 'Independent studio',
+  'home.signature.two': 'Tbilisi based',
+  'home.signature.three': 'Premium web experiences',
+  'home.float.top.title': 'Launch-ready',
+  'home.float.top.text': 'Strategy, design, code',
+  'home.float.bottom.title': 'Responsive',
+  'home.float.bottom.text': 'Every screen, polished',
   'services.web.aria': 'Ask about web development',
   'services.design.aria': 'Ask about UI and UX design',
   'services.performance.aria': 'Ask about performance optimisation',
   'projects.preview.alt': 'Website project preview',
+  'studio.strip.one': 'Custom UI direction',
+  'studio.strip.two': 'Responsive implementation',
+  'studio.strip.three': 'Clean static deployments',
+  'studio.strip.four': 'Business-ready pages',
   'skills.aria': 'Programming languages we know',
   'ani.photo.alt': 'Ani Mamucharashvili',
   'nika.photo.alt': 'Nika Tepnadze',
@@ -286,6 +297,19 @@ Object.assign(translations.ka, {
   'footer.top': 'ზემოთ დაბრუნება',
 });
 
+Object.assign(translations.ka, {
+  'home.signature.one': 'Independent studio',
+  'home.signature.two': 'Tbilisi based',
+  'home.signature.three': 'Premium web experiences',
+  'home.float.top.title': 'Launch-ready',
+  'home.float.top.text': 'Strategy, design, code',
+  'home.float.bottom.title': 'Responsive',
+  'home.float.bottom.text': 'Every screen, polished',
+  'studio.strip.one': 'Custom UI direction',
+  'studio.strip.two': 'Responsive implementation',
+  'studio.strip.three': 'Clean static deployments',
+  'studio.strip.four': 'Business-ready pages',
+});
 const closeMenu = () => {
   navigation?.classList.remove('is-open');
   menuButton?.setAttribute('aria-expanded', 'false');
