@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ka">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -16,142 +16,274 @@
         <span class="brand-sub">BARBERSHOP</span>
       </a>
 
-      <nav class="nav-links" aria-label="მთავარი ნავიგაცია">
-        <a href="#top">მთავარი</a>
-        <a href="#about">ჩვენს შესახებ</a>
-        <a href="#services">სერვისები</a>
-        <a href="#masters">მასტერები</a>
-        <a href="#gallery">გალერეა</a>
-        <a href="#contact">კონტაქტი</a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#top" data-i18n="navHome">Home</a>
+        <a href="#about" data-i18n="navAbout">About</a>
+        <a href="#services" data-i18n="navServices">Services</a>
+        <a href="#offers" data-i18n="navOffers">Offers</a>
+        <a href="#products" data-i18n="navProducts">Products</a>
+        <a href="#hours" data-i18n="navHours">Hours</a>
+        <a href="#gallery" data-i18n="navGallery">Gallery</a>
+        <a href="#contact" data-i18n="navContact">Contact</a>
       </nav>
 
-      <a class="btn btn-primary header-cta" href="#booking">
-        დაჯავშნე ვიზიტი
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 2v4m8-4v4M3 10h18M5 5h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z" /></svg>
-      </a>
+      <div class="header-actions">
+        <div class="language-switch" aria-label="Language switcher">
+          <button class="lang-btn is-active" type="button" data-lang="en">EN</button>
+          <button class="lang-btn" type="button" data-lang="ka">KA</button>
+        </div>
+        <a class="btn btn-primary header-cta" href="#booking">
+          <span data-i18n="bookVisit">Book a visit</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 2v4m8-4v4M3 10h18M5 5h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z" /></svg>
+        </a>
+      </div>
     </header>
 
     <main id="top">
       <section class="hero">
         <div class="hero-photo photo photo-hero" aria-hidden="true"></div>
         <div class="hero-content">
-          <h1>შენი სტილი.<br /><span>ჩვენი ხელოვნება.</span></h1>
-          <p>Mid Barbershop - ადგილი, სადაც კლასიკა ხვდება ხარისხს და სტილს.</p>
+          <h1><span data-i18n="heroTitleMain">Your style.</span><br /><span data-i18n="heroTitleAccent">Our craft.</span></h1>
+          <p data-i18n="heroText">MID Barbershop is a sharp, comfortable salon where classic barbering meets modern style.</p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#booking">
-              დაჯავშნე ვიზიტი
+              <span data-i18n="bookVisit">Book a visit</span>
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 2v4m8-4v4M3 10h18M5 5h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z" /></svg>
             </a>
-            <a class="btn btn-outline" href="#about">ჩვენს შესახებ</a>
+            <a class="btn btn-outline" href="#about" data-i18n="aboutUs">About us</a>
           </div>
         </div>
       </section>
 
-      <section class="features" id="about" aria-label="ჩვენი უპირატესობები">
+      <section class="features" id="about" aria-label="Salon advantages">
         <article>
           <span class="feature-icon scissors"></span>
-          <h3>პროფესიონალი მასტერები</h3>
-          <p>გამოცდილი და სტილით მუშა გუნდი</p>
+          <h3 data-i18n="featureOneTitle">Professional barbers</h3>
+          <p data-i18n="featureOneText">Experienced masters with clean technique and strong taste.</p>
         </article>
         <article>
           <span class="feature-icon chair"></span>
-          <h3>კომფორტული გარემო</h3>
-          <p>მყუდრო და მამაკაცური ატმოსფერო</p>
+          <h3 data-i18n="featureTwoTitle">Comfortable space</h3>
+          <p data-i18n="featureTwoText">A relaxed salon atmosphere with music, coffee, and privacy.</p>
         </article>
         <article>
           <span class="feature-icon bottle"></span>
-          <h3>პრემიუმ ხარისხი</h3>
-          <p>მხოლოდ მაღალი ხარისხის პროდუქტები</p>
+          <h3 data-i18n="featureThreeTitle">Premium products</h3>
+          <p data-i18n="featureThreeText">High-quality styling, beard, and aftercare products.</p>
         </article>
         <article>
           <span class="feature-icon clock"></span>
-          <h3>ზუსტი დრო</h3>
-          <p>ვკონტროლებთ დროს, რასაც აფასებთ</p>
+          <h3 data-i18n="featureFourTitle">On-time service</h3>
+          <p data-i18n="featureFourText">Book your slot and get served without wasting the day.</p>
         </article>
       </section>
 
       <section class="split-section" id="services">
         <aside class="section-aside">
-          <p class="eyebrow">სერვისები</p>
-          <h2>ჩვენი სერვისები</h2>
+          <p class="eyebrow" data-i18n="servicesEyebrow">Services</p>
+          <h2 data-i18n="servicesTitle">Barber services</h2>
           <span class="heading-rule"></span>
-          <a class="btn btn-outline" href="#services">ყველა სერვისი</a>
+          <a class="btn btn-outline" href="#booking" data-i18n="bookNow">Book now</a>
         </aside>
         <div class="service-grid">
           <article class="service-card">
             <div class="card-photo photo crop-service-1"></div>
             <span class="card-icon scissors"></span>
-            <h3>თმის შეჭრა</h3>
-            <p class="price">30₾</p>
+            <h3 data-i18n="serviceHaircut">Men's haircut</h3>
+            <p class="price">30 GEL</p>
           </article>
           <article class="service-card">
             <div class="card-photo photo crop-service-2"></div>
             <span class="card-icon beard"></span>
-            <h3>წვერის მოვლა</h3>
-            <p class="price">20₾</p>
+            <h3 data-i18n="serviceBeard">Beard trim</h3>
+            <p class="price">20 GEL</p>
           </article>
           <article class="service-card">
             <div class="card-photo photo crop-service-3"></div>
             <span class="card-icon razor"></span>
-            <h3>კლასიკური პარსვა</h3>
-            <p class="price">25₾</p>
+            <h3 data-i18n="serviceShave">Classic shave</h3>
+            <p class="price">25 GEL</p>
           </article>
           <article class="service-card">
             <div class="card-photo photo crop-service-4"></div>
             <span class="card-icon kid"></span>
-            <h3>ბავშვის თმის შეჭრა</h3>
-            <p class="price">20₾</p>
+            <h3 data-i18n="serviceKids">Kids haircut</h3>
+            <p class="price">20 GEL</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="content-section" id="offers">
+        <div class="section-head">
+          <p class="eyebrow" data-i18n="offersEyebrow">Special offers</p>
+          <h2 data-i18n="offersTitle">Fresh deals this week</h2>
+        </div>
+        <div class="offer-grid">
+          <article class="offer-card">
+            <span data-i18n="offerOneTag">Most popular</span>
+            <h3 data-i18n="offerOneTitle">Haircut + beard shape</h3>
+            <p data-i18n="offerOneText">Full refresh for weekends, dates, and workdays.</p>
+            <strong>45 GEL</strong>
+          </article>
+          <article class="offer-card">
+            <span data-i18n="offerTwoTag">Student deal</span>
+            <h3 data-i18n="offerTwoTitle">Student haircut</h3>
+            <p data-i18n="offerTwoText">Clean fade or classic cut with student pricing.</p>
+            <strong>24 GEL</strong>
+          </article>
+          <article class="offer-card">
+            <span data-i18n="offerThreeTag">Care package</span>
+            <h3 data-i18n="offerThreeTitle">Shave + hot towel + mask</h3>
+            <p data-i18n="offerThreeText">A slower, cleaner grooming session for skin and beard.</p>
+            <strong>38 GEL</strong>
+          </article>
+        </div>
+      </section>
+
+      <section class="split-section" id="products">
+        <aside class="section-aside">
+          <p class="eyebrow" data-i18n="productsEyebrow">Shop</p>
+          <h2 data-i18n="productsTitle">Products we sell</h2>
+          <span class="heading-rule"></span>
+          <p data-i18n="productsIntro">Pick up everyday grooming essentials after your appointment.</p>
+        </aside>
+        <div class="product-grid">
+          <article class="product-card">
+            <figure class="product-media">
+              <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=640&q=80" alt="Matte styling clay product jar" />
+            </figure>
+            <h3 data-i18n="productOneTitle">Matte styling clay</h3>
+            <p data-i18n="productOneText">Strong hold, natural finish.</p>
+            <strong>32 GEL</strong>
+          </article>
+          <article class="product-card">
+            <figure class="product-media">
+              <img src="https://images.unsplash.com/photo-1621607512214-68297480165e?auto=format&fit=crop&w=640&q=80" alt="Cedar beard oil bottle" />
+            </figure>
+            <h3 data-i18n="productTwoTitle">Cedar beard oil</h3>
+            <p data-i18n="productTwoText">Softens beard and calms skin.</p>
+            <strong>28 GEL</strong>
+          </article>
+          <article class="product-card">
+            <figure class="product-media">
+              <img src="https://images.unsplash.com/photo-1580870069867-74c57ee1bb07?auto=format&fit=crop&w=640&q=80" alt="Daily hair tonic bottle" />
+            </figure>
+            <h3 data-i18n="productThreeTitle">Daily hair tonic</h3>
+            <p data-i18n="productThreeText">Light control for quick styling.</p>
+            <strong>24 GEL</strong>
+          </article>
+          <article class="product-card">
+            <figure class="product-media">
+              <img src="https://images.unsplash.com/photo-1522338242992-e1a54906a8da?auto=format&fit=crop&w=640&q=80" alt="Aftershave balm product" />
+            </figure>
+            <h3 data-i18n="productFourTitle">Aftershave balm</h3>
+            <p data-i18n="productFourText">Fresh finish after shaving.</p>
+            <strong>26 GEL</strong>
           </article>
         </div>
       </section>
 
       <section class="split-section" id="masters">
         <aside class="section-aside">
-          <p class="eyebrow">მასტერები</p>
-          <h2>ჩვენი მასტერები</h2>
+          <p class="eyebrow" data-i18n="mastersEyebrow">Masters</p>
+          <h2 data-i18n="mastersTitle">Meet the barbers</h2>
           <span class="heading-rule"></span>
-          <a class="btn btn-outline" href="#masters">ყველა მასტერი</a>
+          <a class="btn btn-outline" href="#booking" data-i18n="chooseMaster">Choose a master</a>
         </aside>
         <div class="master-grid">
           <article class="master-card">
             <div class="master-photo photo crop-master-1"></div>
-            <h3>გიორგი</h3>
-            <p>მასტერი-ბარბერი</p>
-            <div class="social-mini"><span>◎</span><span>✓</span></div>
+            <h3>Giorgi</h3>
+            <p data-i18n="masterRole">Master barber</p>
+            <span class="experience-badge" data-i18n="expGiorgi">8 years experience</span>
+            <div class="social-mini"><span>IG</span><span>FB</span></div>
           </article>
           <article class="master-card">
             <div class="master-photo photo crop-master-2"></div>
-            <h3>ლევანი</h3>
-            <p>მასტერი-ბარბერი</p>
-            <div class="social-mini"><span>◎</span><span>✓</span></div>
+            <h3>Levan</h3>
+            <p data-i18n="masterRole">Master barber</p>
+            <span class="experience-badge" data-i18n="expLevan">6 years experience</span>
+            <div class="social-mini"><span>IG</span><span>FB</span></div>
           </article>
           <article class="master-card">
             <div class="master-photo photo crop-master-3"></div>
-            <h3>დავითი</h3>
-            <p>მასტერი-ბარბერი</p>
-            <div class="social-mini"><span>◎</span><span>✓</span></div>
+            <h3>Daviti</h3>
+            <p data-i18n="masterRole">Master barber</p>
+            <span class="experience-badge" data-i18n="expDaviti">10 years experience</span>
+            <div class="social-mini"><span>IG</span><span>FB</span></div>
           </article>
           <article class="master-card">
             <div class="master-photo photo crop-master-4"></div>
-            <h3>მიშა</h3>
-            <p>მასტერი-ბარბერი</p>
-            <div class="social-mini"><span>◎</span><span>✓</span></div>
+            <h3>Misha</h3>
+            <p data-i18n="masterRole">Master barber</p>
+            <span class="experience-badge" data-i18n="expMisha">5 years experience</span>
+            <div class="social-mini"><span>IG</span><span>FB</span></div>
           </article>
+        </div>
+      </section>
+
+      <section class="content-section hours-location" id="hours">
+        <div class="section-head">
+          <p class="eyebrow" data-i18n="visitEyebrow">Visit us</p>
+          <h2 data-i18n="visitTitle">Working hours and address</h2>
+        </div>
+        <div class="visit-grid">
+          <article class="hours-card">
+            <h3 data-i18n="hoursTitle">Working hours</h3>
+            <ul>
+              <li><span data-i18n="monFri">Monday - Friday</span><strong>10:00 - 21:00</strong></li>
+              <li><span data-i18n="saturday">Saturday</span><strong>10:00 - 20:00</strong></li>
+              <li><span data-i18n="sunday">Sunday</span><strong>11:00 - 18:00</strong></li>
+            </ul>
+          </article>
+          <article class="address-card">
+            <h3 data-i18n="addressTitle">Address</h3>
+            <p data-i18n="addressText">5 Chavchavadze Avenue, Vake, Tbilisi</p>
+            <p data-i18n="addressNote">Random salon map preview for the listed address area.</p>
+            <a class="btn btn-outline" href="https://www.openstreetmap.org/search?query=Chavchavadze%20Avenue%205%20Tbilisi" target="_blank" rel="noreferrer" data-i18n="openMap">Open map</a>
+          </article>
+          <div class="map-card" aria-label="Map preview">
+            <iframe
+              title="MID Barbershop map"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=44.7565%2C41.7070%2C44.7895%2C41.7250&amp;layer=mapnik&amp;marker=41.7160%2C44.7730"
+              loading="lazy"
+            ></iframe>
+          </div>
         </div>
       </section>
 
       <section class="split-section gallery-section" id="gallery">
         <aside class="section-aside">
-          <p class="eyebrow">გალერეა</p>
-          <h2>ჩვენი ნამუშევრები</h2>
+          <p class="eyebrow" data-i18n="galleryEyebrow">Gallery</p>
+          <h2 data-i18n="galleryTitle">See the salon visually</h2>
           <span class="heading-rule"></span>
+          <p data-i18n="galleryIntro">Real haircut result photos and barbershop interiors so customers can see the vibe before visiting.</p>
         </aside>
         <div class="gallery-grid">
-          <div class="photo crop-gallery-1"></div>
-          <div class="photo crop-gallery-2"></div>
-          <div class="photo crop-gallery-3"></div>
-          <div class="photo crop-gallery-4"></div>
-          <div class="photo crop-gallery-5"></div>
+          <figure class="gallery-card">
+            <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=900&q=82" alt="Barber finishing a sharp haircut" />
+            <figcaption data-i18n="galleryCutOne">Sharp fade finish</figcaption>
+          </figure>
+          <figure class="gallery-card">
+            <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=900&q=82" alt="Customer getting a haircut in a barbershop" />
+            <figcaption data-i18n="galleryCutTwo">Classic chair service</figcaption>
+          </figure>
+          <figure class="gallery-card">
+            <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=900&q=82" alt="Modern haircut detail" />
+            <figcaption data-i18n="galleryCutThree">Clean beard and haircut detail</figcaption>
+          </figure>
+          <figure class="gallery-card">
+            <img src="https://images.unsplash.com/photo-1517832606299-7ae9b720a186?auto=format&fit=crop&w=900&q=82" alt="Barbershop interior with barber chairs" />
+            <figcaption data-i18n="galleryInteriorOne">Warm barber chairs</figcaption>
+          </figure>
+          <figure class="gallery-card">
+            <img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=900&q=82" alt="Barbershop mirror and styling station" />
+            <figcaption data-i18n="galleryInteriorTwo">Mirror and styling station</figcaption>
+          </figure>
+          <figure class="gallery-card">
+            <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=900&q=82" alt="Modern barbershop interior" />
+            <figcaption data-i18n="galleryInteriorThree">Modern interior view</figcaption>
+          </figure>
         </div>
       </section>
 
@@ -160,11 +292,20 @@
           <svg viewBox="0 0 24 24"><path d="M8 2v4m8-4v4M3 10h18M6 14h3m3 0h3m-9 4h3m3 0h2M5 5h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z" /></svg>
         </div>
         <div>
-          <h2>დაჯავშნე ვიზიტი ონლაინ</h2>
-          <p>აირჩიე დრო და მასტერი მარტივად წამში.</p>
+          <h2 data-i18n="bookingTitle">Book your appointment online</h2>
+          <p data-i18n="bookingText">Choose a time, pick your barber, and arrive ready.</p>
+          <div class="booking-contact">
+            <a href="tel:+995555123456">
+              <span data-i18n="callUs">Call us</span>
+              <strong>+995 555 12 34 56</strong>
+            </a>
+            <a href="https://www.instagram.com/" target="_blank" rel="noreferrer">Instagram</a>
+            <a href="https://www.facebook.com/" target="_blank" rel="noreferrer">Facebook</a>
+            <a href="https://www.tiktok.com/" target="_blank" rel="noreferrer">TikTok</a>
+          </div>
         </div>
         <a class="btn btn-primary" href="#contact">
-          დაჯავშნე ვიზიტი
+          <span data-i18n="bookVisit">Book a visit</span>
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 2v4m8-4v4M3 10h18M5 5h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z" /></svg>
         </a>
       </section>
@@ -180,38 +321,237 @@
             <span class="brand-main">MID</span>
             <span class="brand-sub">BARBERSHOP</span>
           </a>
-          <p>Mid Barbershop - მეტი ვიდრე სალონი. ეს არის სტილი, ნდობა და ხარისხი.</p>
+          <p data-i18n="footerText">MID Barbershop is more than a salon: it is style, trust, and consistent quality.</p>
         </div>
         <div>
-          <h3>ბმულები</h3>
-          <a href="#top">მთავარი</a>
-          <a href="#about">ჩვენს შესახებ</a>
-          <a href="#services">სერვისები</a>
-          <a href="#masters">მასტერები</a>
-          <a href="#gallery">გალერეა</a>
-          <a href="#contact">კონტაქტი</a>
+          <h3 data-i18n="footerLinks">Links</h3>
+          <a href="#top" data-i18n="navHome">Home</a>
+          <a href="#about" data-i18n="navAbout">About</a>
+          <a href="#services" data-i18n="navServices">Services</a>
+          <a href="#offers" data-i18n="navOffers">Offers</a>
+          <a href="#products" data-i18n="navProducts">Products</a>
+          <a href="#hours" data-i18n="navHours">Hours</a>
+          <a href="#gallery" data-i18n="navGallery">Gallery</a>
         </div>
         <div>
-          <h3>კონტაქტი</h3>
+          <h3 data-i18n="navContact">Contact</h3>
           <p>+995 555 12 34 56</p>
-          <p>ქ. თბილისი, ვაკე, ჭავჭავაძის გამზ. 5</p>
-          <p>ყოველდღე 10:00 - 21:00</p>
+          <p data-i18n="addressText">5 Chavchavadze Avenue, Vake, Tbilisi</p>
+          <p data-i18n="footerHours">Every day: 10:00 - 21:00</p>
         </div>
         <div>
-          <h3>გამოგვიყევი</h3>
+          <h3 data-i18n="followUs">Follow us</h3>
           <div class="socials">
-            <a href="#" aria-label="Instagram">◎</a>
+            <a href="#" aria-label="Instagram">IG</a>
             <a href="#" aria-label="Facebook">f</a>
-            <a href="#" aria-label="TikTok">♪</a>
+            <a href="#" aria-label="TikTok">TT</a>
           </div>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>© 2024 Mid Barbershop. ყველა უფლება დაცულია.</p>
-        <p>Created with passion. ♥</p>
+        <p data-i18n="copyright">© 2026 MID Barbershop. All rights reserved.</p>
+        <p data-i18n="madeWith">Created with passion.</p>
       </div>
     </footer>
     <script>
+      const translations = {
+        en: {
+          navHome: "Home",
+          navAbout: "About",
+          navServices: "Services",
+          navOffers: "Offers",
+          navProducts: "Products",
+          navHours: "Hours",
+          navGallery: "Gallery",
+          navContact: "Contact",
+          bookVisit: "Book a visit",
+          heroTitleMain: "Your style.",
+          heroTitleAccent: "Our craft.",
+          heroText: "MID Barbershop is a sharp, comfortable salon where classic barbering meets modern style.",
+          aboutUs: "About us",
+          featureOneTitle: "Professional barbers",
+          featureOneText: "Experienced masters with clean technique and strong taste.",
+          featureTwoTitle: "Comfortable space",
+          featureTwoText: "A relaxed salon atmosphere with music, coffee, and privacy.",
+          featureThreeTitle: "Premium products",
+          featureThreeText: "High-quality styling, beard, and aftercare products.",
+          featureFourTitle: "On-time service",
+          featureFourText: "Book your slot and get served without wasting the day.",
+          servicesEyebrow: "Services",
+          servicesTitle: "Barber services",
+          bookNow: "Book now",
+          serviceHaircut: "Men's haircut",
+          serviceBeard: "Beard trim",
+          serviceShave: "Classic shave",
+          serviceKids: "Kids haircut",
+          offersEyebrow: "Special offers",
+          offersTitle: "Fresh deals this week",
+          offerOneTag: "Most popular",
+          offerOneTitle: "Haircut + beard shape",
+          offerOneText: "Full refresh for weekends, dates, and workdays.",
+          offerTwoTag: "Student deal",
+          offerTwoTitle: "Student haircut",
+          offerTwoText: "Clean fade or classic cut with student pricing.",
+          offerThreeTag: "Care package",
+          offerThreeTitle: "Shave + hot towel + mask",
+          offerThreeText: "A slower, cleaner grooming session for skin and beard.",
+          productsEyebrow: "Shop",
+          productsTitle: "Products we sell",
+          productsIntro: "Pick up everyday grooming essentials after your appointment.",
+          productOneTitle: "Matte styling clay",
+          productOneText: "Strong hold, natural finish.",
+          productTwoTitle: "Cedar beard oil",
+          productTwoText: "Softens beard and calms skin.",
+          productThreeTitle: "Daily hair tonic",
+          productThreeText: "Light control for quick styling.",
+          productFourTitle: "Aftershave balm",
+          productFourText: "Fresh finish after shaving.",
+          mastersEyebrow: "Masters",
+          mastersTitle: "Meet the barbers",
+          chooseMaster: "Choose a master",
+          masterRole: "Master barber",
+          expGiorgi: "8 years experience",
+          expLevan: "6 years experience",
+          expDaviti: "10 years experience",
+          expMisha: "5 years experience",
+          visitEyebrow: "Visit us",
+          visitTitle: "Working hours and address",
+          hoursTitle: "Working hours",
+          monFri: "Monday - Friday",
+          saturday: "Saturday",
+          sunday: "Sunday",
+          addressTitle: "Address",
+          addressText: "5 Chavchavadze Avenue, Vake, Tbilisi",
+          addressNote: "Random salon map preview for the listed address area.",
+          openMap: "Open map",
+          galleryEyebrow: "Gallery",
+          galleryTitle: "See the salon visually",
+          galleryIntro: "Real haircut result photos and barbershop interiors so customers can see the vibe before visiting.",
+          galleryCutOne: "Sharp fade finish",
+          galleryCutTwo: "Classic chair service",
+          galleryCutThree: "Clean beard and haircut detail",
+          galleryInteriorOne: "Warm barber chairs",
+          galleryInteriorTwo: "Mirror and styling station",
+          galleryInteriorThree: "Modern interior view",
+          bookingTitle: "Book your appointment online",
+          bookingText: "Choose a time, pick your barber, and arrive ready.",
+          callUs: "Call us",
+          footerText: "MID Barbershop is more than a salon: it is style, trust, and consistent quality.",
+          footerLinks: "Links",
+          footerHours: "Every day: 10:00 - 21:00",
+          followUs: "Follow us",
+          copyright: "© 2026 MID Barbershop. All rights reserved.",
+          madeWith: "Created with passion."
+        },
+        ka: {
+          navHome: "მთავარი",
+          navAbout: "ჩვენ შესახებ",
+          navServices: "სერვისები",
+          navOffers: "შეთავაზებები",
+          navProducts: "პროდუქტები",
+          navHours: "საათები",
+          navGallery: "გალერეა",
+          navContact: "კონტაქტი",
+          bookVisit: "ვიზიტის დაჯავშნა",
+          heroTitleMain: "შენი სტილი.",
+          heroTitleAccent: "ჩვენი ოსტატობა.",
+          heroText: "MID Barbershop არის კომფორტული სალონი, სადაც კლასიკური ბარბერინგი თანამედროვე სტილს ხვდება.",
+          aboutUs: "ჩვენ შესახებ",
+          featureOneTitle: "პროფესიონალი ბარბერები",
+          featureOneText: "გამოცდილი ოსტატები სუფთა ტექნიკით და კარგი გემოვნებით.",
+          featureTwoTitle: "კომფორტული სივრცე",
+          featureTwoText: "მყუდრო ატმოსფერო მუსიკით, ყავით და პირადი სივრცით.",
+          featureThreeTitle: "პრემიუმ პროდუქტები",
+          featureThreeText: "ხარისხიანი სტაილინგის, წვერის და მოვლის პროდუქტები.",
+          featureFourTitle: "ზუსტი დრო",
+          featureFourText: "დაჯავშნე დრო და მიიღე მომსახურება ზედმეტი ლოდინის გარეშე.",
+          servicesEyebrow: "სერვისები",
+          servicesTitle: "ბარბერის სერვისები",
+          bookNow: "დაჯავშნა",
+          serviceHaircut: "მამაკაცის ვარცხნილობა",
+          serviceBeard: "წვერის ფორმირება",
+          serviceShave: "კლასიკური პარსვა",
+          serviceKids: "ბავშვის ვარცხნილობა",
+          offersEyebrow: "სპეციალური შეთავაზებები",
+          offersTitle: "კვირის ახალი ფასები",
+          offerOneTag: "ყველაზე პოპულარული",
+          offerOneTitle: "ვარცხნილობა + წვერი",
+          offerOneText: "სრული განახლება შაბათ-კვირისთვის, შეხვედრისთვის ან სამსახურისთვის.",
+          offerTwoTag: "სტუდენტური ფასი",
+          offerTwoTitle: "სტუდენტური ვარცხნილობა",
+          offerTwoText: "სუფთა ფეიდი ან კლასიკური ვარცხნილობა სტუდენტური ფასით.",
+          offerThreeTag: "მოვლის პაკეტი",
+          offerThreeTitle: "პარსვა + ცხელი პირსახოცი + ნიღაბი",
+          offerThreeText: "უფრო მშვიდი და სუფთა მოვლის სესია კანისა და წვერისთვის.",
+          productsEyebrow: "მაღაზია",
+          productsTitle: "პროდუქტები გაყიდვაში",
+          productsIntro: "ვიზიტის შემდეგ შეიძინე ყოველდღიური მოვლის პროდუქტები.",
+          productOneTitle: "მატე სტაილინგის თიხა",
+          productOneText: "ძლიერი ფიქსაცია და ბუნებრივი დასრულება.",
+          productTwoTitle: "კედრის წვერის ზეთი",
+          productTwoText: "არბილებს წვერს და ამშვიდებს კანს.",
+          productThreeTitle: "ყოველდღიური თმის ტონიკი",
+          productThreeText: "მსუბუქი კონტროლი სწრაფი სტაილინგისთვის.",
+          productFourTitle: "პარსვის შემდგომი ბალზამი",
+          productFourText: "სუფთა და გრილი დასრულება პარსვის შემდეგ.",
+          mastersEyebrow: "ოსტატები",
+          mastersTitle: "გაიცანი ბარბერები",
+          chooseMaster: "აირჩიე ოსტატი",
+          masterRole: "ოსტატი ბარბერი",
+          expGiorgi: "8 წლიანი გამოცდილება",
+          expLevan: "6 წლიანი გამოცდილება",
+          expDaviti: "10 წლიანი გამოცდილება",
+          expMisha: "5 წლიანი გამოცდილება",
+          visitEyebrow: "გვესტუმრე",
+          visitTitle: "სამუშაო საათები და მისამართი",
+          hoursTitle: "სამუშაო საათები",
+          monFri: "ორშაბათი - პარასკევი",
+          saturday: "შაბათი",
+          sunday: "კვირა",
+          addressTitle: "მისამართი",
+          addressText: "ჭავჭავაძის გამზირი 5, ვაკე, თბილისი",
+          addressNote: "შემთხვევითი სალონის რუკის პრევიუ მითითებული მისამართის ზონაში.",
+          openMap: "რუკის გახსნა",
+          galleryEyebrow: "გალერეა",
+          galleryTitle: "ნახე სალონი ვიზუალურად",
+          galleryIntro: "რეალური ვარცხნილობის ფოტოები და ბარბერშოპის ინტერიერი, რომ მომხმარებელმა ვიზიტამდე ნახოს გარემო.",
+          galleryCutOne: "სუფთა ფეიდის დასრულება",
+          galleryCutTwo: "კლასიკური სავარძლის სერვისი",
+          galleryCutThree: "წვერისა და ვარცხნილობის დეტალი",
+          galleryInteriorOne: "თბილი ბარბერის სავარძლები",
+          galleryInteriorTwo: "სარკე და სტაილინგის სივრცე",
+          galleryInteriorThree: "თანამედროვე ინტერიერი",
+          bookingTitle: "დაჯავშნე ვიზიტი ონლაინ",
+          bookingText: "აირჩიე დრო, ბარბერი და მოდი მზად.",
+          callUs: "დაგვირეკე",
+          footerText: "MID Barbershop მეტია, ვიდრე სალონი: ეს არის სტილი, ნდობა და ხარისხი.",
+          footerLinks: "ბმულები",
+          footerHours: "ყოველდღე: 10:00 - 21:00",
+          followUs: "გამოგვყევი",
+          copyright: "© 2026 MID Barbershop. ყველა უფლება დაცულია.",
+          madeWith: "შექმნილია სიყვარულით."
+        }
+      };
+
+      const applyLanguage = (lang) => {
+        const selected = translations[lang] ? lang : "en";
+        document.documentElement.lang = selected;
+        localStorage.setItem("mid-barbershop-language", selected);
+        document.querySelectorAll("[data-i18n]").forEach((node) => {
+          const key = node.dataset.i18n;
+          if (translations[selected][key]) node.textContent = translations[selected][key];
+        });
+        document.querySelectorAll(".lang-btn").forEach((button) => {
+          const isActive = button.dataset.lang === selected;
+          button.classList.toggle("is-active", isActive);
+          button.setAttribute("aria-pressed", String(isActive));
+        });
+      };
+
+      document.querySelectorAll(".lang-btn").forEach((button) => {
+        button.addEventListener("click", () => applyLanguage(button.dataset.lang));
+      });
+
       const headerLinks = document.querySelectorAll(".site-header a");
 
       headerLinks.forEach((link) => {
@@ -220,6 +560,8 @@
           link.classList.add("is-header-active");
         });
       });
+
+      applyLanguage(localStorage.getItem("mid-barbershop-language") || "en");
     </script>
   </body>
 </html>
